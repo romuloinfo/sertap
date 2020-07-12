@@ -1,0 +1,51 @@
+.valor {
+  background: linear-gradient(#000000, #312d2d);
+  background: linear-gradient(#0a2516, #154229);
+  color: #fff;
+  padding: 10px;
+  /* margin-top: 10px; */
+}
+
+#contato-principal {
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
+
+#link-branco {
+  color: #fff;
+  text-decoration: none;
+}
+#link-branco:hover {
+  color: #e6ffb7;
+}
+
+.link-geral {
+  text-decoration: none;
+  color: #1f7a48;
+  text-shadow: 0px 0px 5px rgb(175, 175, 175);
+}
+
+.link-geral:hover {
+  text-decoration: none;
+  color: #17c468;
+  text-shadow: 0px 0px 5px rgb(175, 175, 175);
+}
+
+.bg-sertap {
+  background: linear-gradient(to right, #0a2516, rgb(106, 185, 149), #0a2516);
+  /* background: linear-gradient(to right, rgb(74, 179, 130), #0f3d23, rgb(74, 179, 130)); */
+  /* background-color: #0f3f24; */
+  /* background-color: #104d2a; */
+}
+
+.negrito {
+  font-weight: bold;
+}
+
+ul li a:hover {
+  /* background-color: rgb(40, 105, 114); */
+  /* background-color: #0b3f22; */
+  background: radial-gradient(#0e3620, #206840);
+
+  /* padding: 15px 0px 15px 0px; */
+}
