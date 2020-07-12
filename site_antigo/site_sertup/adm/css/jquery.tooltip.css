@@ -1,0 +1,22 @@
+#tooltip {
+	position: absolute;
+	z-index:3000;
+	border: 1px solid #111;
+	background-color: #eee;
+	padding: 5px;
+	opacity: 0.85;
+}
+#tooltip h3, #tooltip div { margin: 0; }
+
+
+	#overlay {
+		background-image:url(http://static.flowplayer.org/img/overlay/transparent.png);
+		color:#efefef;
+		height:450px;
+	}
+	
+	/* container for external content. uses vertical scrollbar, if needed */
+	div.contentWrap {
+		height:441px;
+		overflow-y:auto;
+	}

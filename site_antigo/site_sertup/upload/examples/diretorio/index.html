@@ -1,0 +1,113 @@
+<html>
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Envio de dados, diretório + upload múltiplo - multiUpload</title>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+	<script type="text/javascript" src="../../js/multiUpload.js"></script>
+	
+	<script type="text/javascript">
+		var uploader = new multiUpload('uploader', 'uploader_files', {
+			swf:            '../../swf/multiUpload.swf',
+			script:         'upload.php',
+			expressInstall: '../../swf/expressInstall.swf',
+			multi:          true
+		});
+
+		function sendIt()
+		{
+			var pasta = document.getElementById("txtPasta").value;
+
+			if (pasta.length)
+			{
+				uploader.setData({
+					Pasta: pasta
+				});
+				uploader.startUpload();
+			}
+			else
+				alert("Digite o nome da pasta.");
+		}
+	</script>
+
+	<style type="text/css">
+		@import "../../css/multiUpload.css";
+		@import '../../css/style.css';
+	</style>
+
+</head>
+
+<body>
+
+	<h1>Envio de dados, diretório + upload múltiplo - multiUpload</h1>
+
+	<p>&lt; <a href="../">Voltar para os exemplos</a></p>
+
+	<br />
+
+	<p><strong>Exemplo enviado por:</strong> Carlos Rogério Velozo de Medeiros &lt;carlosvelozo at gmail dot com&gt; - 27/08/2009</p>
+
+	<br />
+
+	<div id="uploader"></div>
+
+	<div id="uploader_files"></div>
+
+	<br style="clear:both" />
+
+	<div>Diretório p/ salvar arquivos: <input type="text" size="10" name="Pasta" id="txtPasta" value="teste" /></div>
+
+	<a href="javascript:sendIt();">Iniciar Upload</a> | <a href="javascript:uploader.clearUploadQueue();">Limpar fila de Upload</a>
+
+	<br /><br />
+
+	<h4>Código:</h4>
+
+	<pre>var uploader = new multiUpload('uploader', 'uploader_files', {
+	swf:            '../../swf/multiUpload.swf',
+	script:         'upload.php',
+	expressInstall: '../../swf/expressInstall.swf',
+	multi:          true
+});
+
+function sendIt()
+{
+	var pasta = document.getElementById("txtPasta").value;
+
+	if (pasta.length)
+	{
+		uploader.setData({
+			Pasta: pasta
+		});
+		uploader.startUpload();
+	}
+	else
+		alert("Digite o nome da pasta.");
+}</pre>
+
+	<h4>Ação "Enviar":</h4>
+
+	<pre>&lt;a href="javascript:sendIt();"&gt;Iniciar Upload&lt;/a&gt;</pre>
+
+	<h4>Script PHP de Upload:</h4>
+
+	<pre>$file  = $_FILES['Filedata'];
+$pasta = "../../uploads/".$_POST['Pasta'];
+
+$path = $file['tmp_name'];
+
+if (!is_dir($pasta))
+	mkdir($pasta);
+
+$new_path = $pasta."/".$file['name'];
+
+move_uploaded_file($path, $new_path);
+
+echo "1";</pre>
+
+</body>
+
+</html>

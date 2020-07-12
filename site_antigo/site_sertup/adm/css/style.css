@@ -1,0 +1,305 @@
+/* 
+    Document   : style
+    Created on : 07/11/2012, 23:15:13
+    Author     : Anderson
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+* {
+margin: 0;
+padding: 0;
+}
+
+html,body{
+        text-decoration: none;
+        list-style:none;
+	font-family: "verdana";
+	font-style:normal;
+	font-size:12px;
+	text-align:center;
+	height: 100%;
+        z-index:10;
+        background-color:#1E4F8A;
+        
+	}
+* html #tudo {height: 100%;}
+h1{
+    font-size: 16px;
+}
+a{
+    color: #333;
+  text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+#tudo{
+ width: 980px;
+
+ text-align:left;
+ margin-left:auto;
+ margin-right:auto;
+ background-color: #FFF;
+ display:table;
+}
+#conteudo {
+
+ margin-left: 10px;
+ display:table;
+
+}
+#cab{
+    width: 100%;
+    background-image: url("../imagens/cab_r1_c4.jpg");
+    background-repeat: repeat-x;
+    TEXT-TRANSFORM: uppercase;
+    
+}
+#cab p{
+    float: right;
+    margin: 20px 10px 0 0;
+    font-weight: bold;
+}
+#fundo_logado{
+    width: 100%;
+    background-image: url("../imagens/cab_r1_c3.jpg");
+    background-repeat: repeat-x;
+}
+
+table { width:100%;  margin: 0.5em; font-size: 12px; }
+td, th { padding: .3em; border: 0px;font-weight: bold}
+thead { background: #fc9; }
+
+#principal{
+
+    width: 980px;
+    height: 444px;
+    background-repeat: no-repeat;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+
+}
+
+#rodape {
+ background-color:#003366;
+ width: 100%;
+ color:#FFF;
+ float: left;
+ display: table;
+ padding: 10px;
+ height: 20%;
+}
+.margin_left{
+margin-left:5px;
+}
+.margin_right_10{
+margin-right:10px;
+}
+.float_left{
+float:left;
+}
+.float_right{
+float:right;
+}
+.col{
+width: 100px;
+float: left
+
+}
+.col1{
+width: 120px;
+float: left
+
+}
+.col200{
+width: 180px;
+float: left
+
+}
+.col2{
+width: 240px;
+float: left
+}
+.col3{
+width: 360px;
+float: left
+}
+.col4{
+width: 480px;
+float: left
+}
+.col5{
+width: 600px;
+float: left
+}
+.col6{
+width: 720px;
+float: left
+}
+.col7{
+width: 850px;
+float: left
+}
+.col8{
+width: 930px;
+margin-left:5px;
+float: left;
+
+}
+
+.col8 p{
+    margin-left: 10px;
+
+}
+.scol1{
+
+width: 80px;
+float: left;
+
+}
+.scol2{
+width: 200px;
+float: left;
+
+}
+.scol3{
+width: 360px;
+
+}
+.scol4{
+width: 480px;
+
+}
+.scol5{
+width: 600px;
+
+}
+.scol6{
+width: 720px;
+
+}
+.scol7{
+width: 840px;
+
+}
+.scol8{
+width: 910px;
+}
+
+.inf_gerenciar{
+    background-color: #003366;
+    height: 25px;
+    color:#FFF;
+    font-weight: bold;
+}
+.bg_quadro{
+       background-color: #ADCAED;
+
+}
+#grid_view{
+  width: 930px;
+}
+
+#pesquisar{
+    background-color: #003366;
+    height: 30px;
+}
+.margin_top5{
+    margin-top: 10px;
+}
+.border_botton{
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #AAA;
+}
+.bacground_color{
+    background-color: #888888;
+}
+.margin_top10{
+    margin-top: 10px;
+}
+.margin_top20{
+    margin-top: 20px;
+}
+.margin_botton10{
+    margin-bottom: 10px;
+
+}
+.paddingH10{
+    padding-left: 10px;
+    padding-right:10px;
+}
+.paddingV10{
+    padding-top: 10px;
+}
+.paddingV5{
+    padding-top: 5px;
+}
+.cinza{
+    background-color: #E6E6E6;
+    height: 20px;
+}
+.branco{
+    background-color: #003366;
+    height: 20px;
+}
+
+
+
+select{
+    height: 20px;
+}
+
+input:focus{
+    background-color: #E6E6E6;
+    border-style: solid;
+}
+
+#botao{
+    height: 25px;
+    width: 80px;
+    background-color: #FFF;
+    border-style: solid;
+    font-weight: bold;
+}
+.botao{
+    height: 25px;
+    width: 80px;
+    background-color: #FFF;
+    border-style: solid;
+    font-weight: bold;
+    
+}
+
+#anterior{
+
+}
+#saldo{
+
+}
+
+#consumo{
+
+}
+.oculta{
+   display: none;
+}
+#acesso_negado{
+    margin-left: 100%;
+    margin-right: 100%;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+    text-align: center;
+}

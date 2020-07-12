@@ -1,0 +1,10 @@
+body{
+    margin: 0;
+    margin-left: 20px;
+    TEXT-TRANSFORM: uppercase;
+}
+h2{
+    margin: 0;
+}
+table { width:100%;  margin: 0; font-size: 12px; }
+td, th { padding: 0; border: 0px;font-weight: bold;height:16px; }

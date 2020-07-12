@@ -1,0 +1,93 @@
+<html>
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Envio de dados + upload de único arquivo - multiUpload</title>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+	<script type="text/javascript" src="../../js/multiUpload.js"></script>
+	
+	<script type="text/javascript">
+		var uploader = new multiUpload('uploader', 'uploader_files', {
+			swf:            '../../swf/multiUpload.swf',
+			script:         'upload.php',
+			expressInstall: '../../swf/expressInstall.swf',
+			multi:          false
+		});
+
+		function sendIt()
+		{
+			var name = document.getElementById("txtName").value;
+
+			if (name.length)
+			{
+				uploader.setData({
+					Name: name
+				});
+				uploader.startUpload();
+			}
+			else
+				alert("Digite o nome do arquivo.");
+		}
+	</script>
+
+	<style type="text/css">
+		@import "../../css/multiUpload.css";
+		@import '../../css/style.css';
+	</style>
+
+</head>
+
+<body>
+
+	<h1>Envio de dados + upload de único arquivo - multiUpload</h1>
+
+	<p>&lt; <a href="../">Voltar para os exemplos</a></p>
+
+	<br />
+
+	<div id="uploader"></div>
+
+	<div id="uploader_files"></div>
+
+	<br style="clear:both" />
+
+	<div>Nome p/ arquivo: <input type="text" size="20" name="Name" id="txtName" value="teste.jpg" /></div>
+
+	<a href="javascript:sendIt();">Iniciar Upload</a> | <a href="javascript:uploader.clearUploadQueue();">Limpar fila de Upload</a>
+
+	<br /><br />
+
+	<h4>Código:</h4>
+
+	<pre>var uploader = new multiUpload('uploader', 'uploader_files', {
+	swf:            '../../swf/multiUpload.swf',
+	script:         'upload.php',
+	expressInstall: '../../swf/expressInstall.swf',
+	multi:          false
+});
+
+function sendIt()
+{
+	var name = document.getElementById("txtName").value;
+
+	if (name.length)
+	{
+		uploader.setData({
+			Name: name
+		});
+		uploader.startUpload();
+	}
+	else
+		alert("Digite o nome do arquivo.");
+}</pre>
+
+	<h4>Ação "Enviar":</h4>
+
+	<pre>&lt;a href="javascript:sendIt();"&gt;Iniciar Upload&lt;/a&gt;</pre>
+
+</body>
+
+</html>
