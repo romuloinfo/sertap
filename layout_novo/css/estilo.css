@@ -18,6 +18,11 @@
 #link-branco:hover {
   color: #e6ffb7;
 }
+.background-login{
+  /* background-color: rgba(238, 238, 238, 0.5); */
+  /* margin: 30px; */
+  padding: 50px;
+}
 
 .link-geral {
   text-decoration: none;
@@ -37,15 +42,26 @@
   /* background-color: #0f3f24; */
   /* background-color: #104d2a; */
 }
+.bg-sertap ul li a:hover {
+  /* background-color: rgb(40, 105, 114); */
+  /* background-color: #0b3f22; */
+  background: radial-gradient(#0e3620, #206840);
+  /* padding: 15px 0px 15px 0px; */
+}
+
+.bg-sertap-adm {
+  background: linear-gradient(to right, #0a2516, rgb(167, 240, 207));
+}
+
+.bg-sertap-adm ul li a:hover {
+  /* background-color: rgb(40, 105, 114); */
+  /* background-color: #0b3f22; */
+  background: radial-gradient(rgba(14, 53, 31, 0.5), rgb(32, 104, 64));
+  /* padding: 15px 0px 15px 0px; */
+}
 
 .negrito {
   font-weight: bold;
 }
 
-ul li a:hover {
-  /* background-color: rgb(40, 105, 114); */
-  /* background-color: #0b3f22; */
-  background: radial-gradient(#0e3620, #206840);
 
-  /* padding: 15px 0px 15px 0px; */
-}

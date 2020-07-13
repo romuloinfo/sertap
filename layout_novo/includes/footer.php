@@ -1,7 +1,7 @@
     <footer style="background: radial-gradient(#154229, #0a2516);">
     <!-- <footer class="bg-dark"> -->
 
-      <div class="row justify-content-center">
+      <div class="row justify-content-center container-fluid">
 
         <div class="col-sm-4 text-center">
          <p style="color:#FFF" class="">
@@ -29,6 +29,7 @@
            <i class="fas fa-envelope"></i> sertapimoveis@hotmail.com
           </p>
         </div>
+
         <div class="col-sm-4 text-center">
          <p style="color:#FFF" class="">
            <span class="lead">Corretores Disponíveis</span><br/>
@@ -48,10 +49,10 @@
         <div class="col-sm-10 text-center">
          <p style="color:#FFF" class="small">
          <br>
-
          Copyright 2017 imobiliária - <b>SERTAP IMÓVEIS</b> Janaúba. Todos os direitos reservados.<br/>
            <i class="fas fa-map-marker-alt"></i> Avenida Marechal Deodoro da Fonseca, 314 - centro-Janaúba/MG Janaúba/MG - CEP: 39.440-000<br/>
           </p>
         </div>
+        
       </div>
     </footer>
