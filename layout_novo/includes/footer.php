@@ -51,6 +51,8 @@
          <br>
          Copyright 2017 imobiliária - <b>SERTAP IMÓVEIS</b> Janaúba. Todos os direitos reservados.<br/>
            <i class="fas fa-map-marker-alt"></i> Avenida Marechal Deodoro da Fonseca, 314 - centro-Janaúba/MG Janaúba/MG - CEP: 39.440-000<br/>
+          <br> <i class="fas fa-laptop-code"></i> Desenvolvido por Rômulo S. Ramos - Analista de Sistemas - (38) 99821-5621 <i class="fab fa-whatsapp"></i>
+
           </p>
         </div>
         

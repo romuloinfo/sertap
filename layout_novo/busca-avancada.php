@@ -50,7 +50,7 @@
             <div class="form-group col-md-6">
               <!-- <label for="assunto">Assunto</label> -->
               <select id="finalidade" name="finalidade" class="form-control">
-                <option selected value="Não informado">Finalidade...</option>
+                <option selected value="">Finalidade...</option>
                 <option value="Venda">Venda</option>
                 <option value="Aluguel">Aluguel</option>
               </select>
@@ -58,8 +58,8 @@
 
             <div class="form-group col-md-6">
               <!-- <label for="assunto">Assunto</label> -->
-              <select id="tipo" name="tipo" class="form-control">
-                <option selected value="Não informado">Tipo...</option>
+              <select id="categoria" name="categoria" class="form-control">
+                <option selected value="">Categoria...</option>
                 <option value="Apartamento">Apartamento</option>
                 <option value="Área">Área</option>
                 <option value="Casa">Casa</option>
@@ -76,7 +76,7 @@
             <div class="form-group col-md-6">
               <!-- <label for="assunto">Assunto</label> -->
               <select id="cidade" name="cidade" class="form-control">
-                <option selected value="Não informado">Cidade...</option>
+                <option selected value="">Cidade...</option>
                 <option value="">??</option>
                 <option value="">??</option>
               </select>
@@ -85,7 +85,7 @@
             <div class="form-group col-md-6">
               <!-- <label for="assunto">Assunto</label> -->
               <select id="quarto" name="quarto" class="form-control">
-                <option selected value="Não informado">Quartos/Dormitórios...</option>
+                <option selected value="">Quartos/Dormitórios...</option>
                 <option value="1">1</option>
                 <option value="1_ou_mais">1 ou mais</option>
                 <option value="2">2</option>
@@ -102,7 +102,7 @@
             <div class="form-group col-md-6">
               <!-- <label for="assunto">Assunto</label> -->
               <select id="suite" name="suite" class="form-control">
-                <option selected value="Não informado">Suítes...</option>
+                <option selected value="">Suíte...</option>
                 <option value="1">1</option>
                 <option value="1_ou_mais">1 ou mais</option>
                 <option value="2">2</option>
@@ -115,7 +115,7 @@
             <div class="form-group col-md-6">
               <!-- <label for="assunto">Assunto</label> -->
               <select id="banheiro" name="banheiro" class="form-control">
-                <option selected value="Não informado">Banheiros...</option>
+                <option selected value="">Banheiro...</option>
                 <option value="1">1</option>
                 <option value="1_ou_mais">1 ou mais</option>
                 <option value="2">2</option>
@@ -130,7 +130,7 @@
             <div class="form-group col-md-6">
               <!-- <label for="assunto">Assunto</label> -->
               <select id="garagem" name="garagem" class="form-control">
-                <option selected value="Não informado">Garagens...</option>
+                <option selected value="">Garagem...</option>
                 <option value="1">1</option>
                 <option value="1_ou_mais">1 ou mais</option>
                 <option value="2">2</option>
@@ -143,13 +143,13 @@
           </div>
           <div class="form-row">
 
-            <div class=" form-group col-md-6">
+          <div class=" form-group col-md-6">
               <!-- <input type="text" class="form-control" title="Preço Máximo" id="max" name="max" placeholder="R$ Máx"> -->
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroupPrepend2">R$</span>
                 </div>
-                <input type="number" class="form-control" id="min" name="min" placeholder="Preço Mínimo" aria-describedby="inputGroupPrepend2">
+                <input type="number" class="form-control" id="preco_min" name="preco_min" placeholder="Preço Mínimo" aria-describedby="inputGroupPrepend2">
               </div>
             </div>
 
@@ -159,18 +159,18 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroupPrepend2">R$</span>
                 </div>
-                <input type="number" class="form-control" id="max" name="max" placeholder="Preço Máximo" aria-describedby="inputGroupPrepend2">
+                <input type="number" class="form-control" id="preco_max" name="preco_max" placeholder="Preço Máximo" aria-describedby="inputGroupPrepend2">
               </div>
             </div>
           
             <div class="form-group col-md-6">
               <!-- <label for="inputEmail4">Email</label> -->
-              <input type="number" class="form-control" id="are_aminima" name="email" placeholder="Área (m²): Mínimo">
+              <input type="number" class="form-control" id="area_minima" name="area_minima" placeholder="Área (m²): Mínimo">
             </div>
 
             <div class="form-group col-md-6">
               <!-- <label for="inputPassword4">Senha</label> -->
-              <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Área (m²): Máximo">
+              <input type="number" class="form-control" id="area_maxima" name="are_maxima" placeholder="Área (m²): Máximo">
             </div>
           </div>
 

@@ -42,19 +42,39 @@
       // include("carousel.php");
     ?>
     <br>
-    <h4 class="lead bg-titulo">Gerenciar Imóveis</h4>
-    <br>
+   <form id="form_contato">
     <div class="row justify-content-center">
-      <div class="col-md-6">
-        <a href="cadastro-imovel.php" class="btn btn-light btn-block"><i class="fas fa-map-marked-alt"></i> Cadastrar Imóvel</a> <br>
-        <a href="cadastro-bairro.php" class="btn btn-light btn-block"><i class="fas fa-map-marker-alt"></i> Cadastrar bairro</a> <br>
-        <a href="cadastro-cidade.php" class="btn btn-light btn-block"><i class="fas fa-globe-africa"></i> Cadastrar Cidade</a> <br>
-      </div>
-    </div>
+      <div class="col-lg-10">
+        <h4 class="lead bg-titulo">Preencha o nome do Bairro e a Cidade</h4>
+        <div class="form-row">
+            
+            <div class="form-group col-md-12">
+              <!-- <label for="inputPassword4">Senha</label> -->
+              <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Nome do Bairro">
+            </div>
 
+            <div class="form-group col-md-12">
+              <select id="cidade" name="cidade" class="form-control">
+                <option selected value="">Cidade...</option>
+                <option value="">??</option>
+                <option value="">??</option>
+              </select>
+            </div>
+
+        </div>    <!-- formrow -->
+        <button type="button" class="btn btn-success btn-block" onclick="insereContato()"> <i class="fas fa-map-marker-alt"></i> Cadastrar Bairro</button>
+      <br>
+     </div>
+    </div>
+  </form>
+      <div id="resposta">
+
+      </div>
 
 </div> <!-- container -->
 <br>
+
+    <?php include("../includes/footer-adm.php"); ?>
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->

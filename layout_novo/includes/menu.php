@@ -2,7 +2,7 @@
   <div class="row" style="padding: 0px;">
     <div class="col" style="padding-top:15px;">
       <p class="text-right lead" id="contato-principal">
-        <a href="https://web.whatsapp.com/send?l=pt_br&phone=5538988310162" target="_blank" id="link-branco"><img src="imagens/whats.png" width="30px">(38) 9 8831-0162 </a>
+        <a href="https://web.whatsapp.com/send?l=pt_br&phone=5538988310162" target="_blank" id="link-branco"><img src="imagens/whats.png" width="30px">(38)98831-0162 </a>
       </p>
     </div>
   </div>
