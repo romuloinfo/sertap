@@ -45,7 +45,7 @@
    <form id="form_contato">
     <div class="row justify-content-center">
       <div class="col-lg-10">
-        <h4 class="lead bg-titulo">Descrição do Imóvel</h4>
+        <h4 class="lead bg-titulo">Descrição do Imóvel que deseja cadastrar</h4>
         <div class="form-row">
             
             <div class="form-group col-md-12">
@@ -54,10 +54,10 @@
             </div>
 
             <div class="form-group col-md-12">
-              <!-- <label for="exampleFormControlTextarea1">Exemplo de textarea</label> -->
-              <textarea class="form-control" id="descricao" name="descricao" rows="2" placeholder="Descrição"></textarea>
+              <!-- <label for="inputPassword4">Senha</label> -->
+              <input type="text" class="form-control" id="pre_descricao" name="pre_descricao" placeholder="Pré Descrição">
             </div>
-
+          
             <div class="form-group col-md-6">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -65,35 +65,39 @@
                 </div>
                 <input type="number" class="form-control" id="preco" name="preco" placeholder="Valor" aria-describedby="inputGroupPrepend2">
               </div>
+            </div> 
+        
+        </div>   <!-- formrow -->
+        <div class="form-row">
+
+            <div class="form-group col-md-12">
+              <!-- <label for="exampleFormControlTextarea1">Exemplo de textarea</label> -->
+              <textarea class="form-control" id="descricao" name="descricao" rows="2" placeholder="Descrição"></textarea>
             </div>
-          
-          </div>        <!-- formrow -->
-          
-          <div class="form-row">
            
             <div class="form-group col-md-6">
               <!-- <label for="assunto">Assunto</label> -->
-              <select id="finalidade" name="finalidade" class="form-control">
-                <option selected value="">Finalidade...</option>
-                <option value="Aluguel">Aluguel</option>
-                <option value="Venda">Venda</option>
+              <select id="tipo" name="tipo" class="form-control">
+                <option selected value="">Tipo...</option>
+                <option value="0">Aluguel</option>
+                <option value="1">Venda</option>
               </select>
             </div>
 
             <div class="form-group col-md-6">
               <!-- <label for="assunto">Assunto</label> -->
               <select id="categoria" name="categoria" class="form-control">
-                <option selected value="Não informado">Categoria...</option>
-                <option value="Apartamento">Apartamento</option>
-                <option value="Área">Área</option>
-                <option value="Casa">Casa</option>
-                <option value="Chácara">Chácara</option>
-                <option value="Fazenda">Fazenda</option>
-                <option value="Lote">Lote</option>
-                <option value="Ponto Comercial">Ponto Comercial</option>
-                <option value="Pousada">Pousada</option>
-                <option value="Salas">Salas</option>
-                <option value="Terreno">Terreno</option>
+                <option selected value="">Categoria...</option>
+                <option value="4">Apartamento</option>
+                <option value="7">Área</option>
+                <option value="1">Casa</option>
+                <option value="8">Chácara</option>
+                <option value="2">Fazenda</option>
+                <option value="5">Lote</option>
+                <option value="3">Ponto Comercial</option>
+                <option value="9">Pousada</option>
+                <option value="6">Salas</option>
+                <option value="10">Terreno</option>
               </select>
             </div>
           
@@ -124,27 +128,27 @@
               <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço">
             </div>
 
-            <div class="form-group col-md-6">
-              <select id="status_site" name="status_site" class="form-control">
-                <option selected value="">Status no Site</option>
-                <option value="Ativado">Ativado</option>
-                <option value="Desativado">Desativado</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6">
-              <select id="status_contrato" name="status_contrato" class="form-control">
-                <option selected value="">Status no Contrato</option>
-                <option value="Disponível">Disponível</option>
-                <option value="Alugado">Alugado</option>
-                <option value="Vendido">Vendido</option>
-              </select>
-            </div>
-
         </div>          <!-- formrow -->
 
         <h4 class="lead bg-titulo">Detalhes</h4>
         <div class="form-row">
+
+          <div class="form-group col-md-6">
+            <select id="status_site" name="status_site" class="form-control">
+              <option selected value="">Status no Site...</option>
+              <option value="1">Ativado</option>
+              <option value="0">Desativado</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-6">
+            <select id="acao" name="acao" class="form-control">
+              <option selected value="">Status no Contrato...</option>
+              <option value="0">Disponível</option>
+              <option value="1">Alugado</option>
+              <option value="2">Vendido</option>
+            </select>
+          </div>
 
           <div class="form-group col-md-6">
             <!-- <label for="assunto">Assunto</label> -->
@@ -198,19 +202,42 @@
             </select>
           </div>
 
-          <div class="form-group col-md-6">
-            <input type="text" class="form-control" id="tamanho_imovel" name="tamanho_imovel" placeholder="Tamanho do Imóvel (m²)">
+          <div class="form-group col-md-4 col-8">
+            <input type="number" class="form-control" id="tamanho_imovel" name="tamanho_imovel" placeholder="Tamanho do Imóvel (só número)">
+          </div>
+          <div class="form-group col-md-2 col-4">
+            <select id="tamanho_imovel_descricao" name="tamanho_imovel_descricao" class="form-control">
+              <option selected value="m²">m²</option>
+              <option value="Hectare">hectare</option>
+              <option value="Alqueire">Alqueire</option>
+            </select>
           </div>
 
-          <div class="form-group col-md-6">
-            <input type="text" class="form-control" id="tamanho_terreno" name="tamanho_terreno" placeholder="Tamanho do Terreno (m²)">
+          <div class="form-group col-md-4 col-8">
+            <input type="number" class="form-control" id="tamanho_terreno" name="tamanho_terreno" placeholder="Tamanho do Terreno (só número)">
+          </div>
+
+          <div class="form-group col-md-2 col-4">
+            <select id="tamanho_terreno_descricao" name="tamanho_terreno_descricao" class="form-control">
+              <option selected value="m²">m²</option>
+              <option value="Hectare">hectare</option>
+              <option value="Alqueire">Alqueire</option>
+            </select>
           </div>
 
           <div class="form-group col-md-6">
             <select id="area_servico" name="area_servico" class="form-control">
               <option selected value="">Área de Serviço...</option>
-              <option value="Sim">Sim</option>
-              <option value="Não">Não</option>
+              <option value="1">Sim</option>
+              <option value="0">Não</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-6">
+            <select id="destaque" name="destaque" class="form-control">
+              <option selected value="">Destaque no Site...</option>
+              <option value="1">Sim</option>
+              <option value="0">Não</option>
             </select>
           </div>
 

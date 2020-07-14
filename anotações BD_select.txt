@@ -1,0 +1,17 @@
+Destaque
+1 - sim
+0 - não
+
+tipo
+1 - venda
+0 - aluguel
+
+status_site (status)
+0 - desativado
+1 - ativado
+
+Status contrato (acao)
+0 - disponível
+1 - vendido
+
+
