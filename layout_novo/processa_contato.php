@@ -40,8 +40,9 @@ if(
   }
   else{
     include_once "includes/conexao.php";
-    $sql = "INSERT INTO contato (assunto, nome, email, telefone, mensagem)
-    VALUES ('$assunto', '$nome', '$email', '$telefone', '$mensagem')";
+    $data_mensagem = date('Y-m-d H:i');
+    $sql = "INSERT INTO contato (assunto, nome, email, telefone, mensagem, data_mensagem)
+    VALUES ('$assunto', '$nome', '$email', '$telefone', '$mensagem', '$data_mensagem')";
 
     if ($query = $conexao->query($sql) ){
 

@@ -13,5 +13,9 @@ status_site (status)
 Status contrato (acao)
 0 - disponível
 1 - vendido
+2 - alugado
 
+area_servico
+1 - sim
+0 - não
 

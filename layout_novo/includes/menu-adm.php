@@ -53,11 +53,8 @@
             <a class="nav-link" style="color:#000; text-shadow:1px 1px 30px #fff;" href="cliente.php"><i class="fas fa-user-tie"></i> Clientes</a>
           </li>
           <!-- <li class="nav-item">
-            <a class="nav-link" style="color:#fff; text-shadow:1px 1px 3px #000" href="#">Venda</a>
-          </li> -->
-          <li class="nav-item">
             <a class="nav-link" style="color:#000; text-shadow:1px 1px 30px #fff;" href="categoria.php"><i class="fas fa-clipboard-list"></i> Categorias</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" style="color:#000; text-shadow:1px 1px 30px #fff;" href="usuarios.php"><i class="fas fa-users"></i> Usuários</a>
           </li>

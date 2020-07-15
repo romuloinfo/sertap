@@ -16,7 +16,7 @@ function insereContato() {
 
   ajax.open(
     'GET',
-    'processa.php?assunto=' +
+    'processa_contato.php?assunto=' +
       assunto +
       '&nome=' +
       nome +

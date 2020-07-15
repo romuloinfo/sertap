@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <?php
+    include("funcoes/funcoes.php");
+  ?>
   <head>
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
@@ -21,7 +24,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
     <!-- Ajax -->
-    <script src="../js/ajax.js"></script>
+    <script src="../js/ajax-imoveis.js"></script>
 
     <title>SERTAP IMÓVEIS</title>
 
@@ -50,7 +53,7 @@
             
             <div class="form-group col-md-12">
               <!-- <label for="inputPassword4">Senha</label> -->
-              <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título">
+              <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título *">
             </div>
 
             <div class="form-group col-md-12">
@@ -63,7 +66,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroupPrepend2">R$</span>
                 </div>
-                <input type="number" class="form-control" id="preco" name="preco" placeholder="Valor" aria-describedby="inputGroupPrepend2">
+                <input type="number" class="form-control" id="valor" name="valor" placeholder="Valor *" aria-describedby="inputGroupPrepend2">
               </div>
             </div> 
         
@@ -78,7 +81,7 @@
             <div class="form-group col-md-6">
               <!-- <label for="assunto">Assunto</label> -->
               <select id="tipo" name="tipo" class="form-control">
-                <option selected value="">Tipo...</option>
+                <option selected value="">Tipo... *</option>
                 <option value="0">Aluguel</option>
                 <option value="1">Venda</option>
               </select>
@@ -87,8 +90,11 @@
             <div class="form-group col-md-6">
               <!-- <label for="assunto">Assunto</label> -->
               <select id="categoria" name="categoria" class="form-control">
-                <option selected value="">Categoria...</option>
-                <option value="4">Apartamento</option>
+                <option selected value="">Categoria... *</option>
+                <?php 
+                  buscar_categorias(); 
+                  ?>
+                <!-- <option value="4">Apartamento</option>
                 <option value="7">Área</option>
                 <option value="1">Casa</option>
                 <option value="8">Chácara</option>
@@ -97,7 +103,7 @@
                 <option value="3">Ponto Comercial</option>
                 <option value="9">Pousada</option>
                 <option value="6">Salas</option>
-                <option value="10">Terreno</option>
+                <option value="10">Terreno</option> -->
               </select>
             </div>
           
@@ -109,9 +115,11 @@
 
             <div class="form-group col-md-6">
               <select id="cidade" name="cidade" class="form-control">
-                <option selected value="">Cidade...</option>
-                <option value="">??</option>
-                <option value="">??</option>
+                <option selected value="">Cidade... *</option>
+                <option value="3290">Janaúba</option>
+                 <?php
+                    buscar_cidades(); 
+                 ?> 
               </select>
             </div>
 
@@ -135,7 +143,7 @@
 
           <div class="form-group col-md-6">
             <select id="status_site" name="status_site" class="form-control">
-              <option selected value="">Status no Site...</option>
+              <option selected value="">Status no Site... *</option>
               <option value="1">Ativado</option>
               <option value="0">Desativado</option>
             </select>
@@ -143,7 +151,7 @@
 
           <div class="form-group col-md-6">
             <select id="acao" name="acao" class="form-control">
-              <option selected value="">Status no Contrato...</option>
+              <option selected value="">Status no Contrato... *</option>
               <option value="0">Disponível</option>
               <option value="1">Alugado</option>
               <option value="2">Vendido</option>
@@ -235,14 +243,14 @@
 
           <div class="form-group col-md-6">
             <select id="destaque" name="destaque" class="form-control">
-              <option selected value="">Destaque no Site...</option>
+              <option selected value="0">Destaque no Site...</option>
               <option value="1">Sim</option>
               <option value="0">Não</option>
             </select>
           </div>
 
         </div>    <!-- formrow -->
-        <button type="button" class="btn btn-success btn-block" onclick="insereContato()"> <i class="fas fa-map-marked-alt"></i> Cadastrar Imóvel</button>
+        <button type="button" class="btn btn-success btn-block" onclick="insereImovel()"> <i class="fas fa-map-marked-alt"></i> Cadastrar Imóvel</button>
       <br>
      </div>
     </div>

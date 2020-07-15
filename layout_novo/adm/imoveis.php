@@ -47,8 +47,10 @@
     <div class="row justify-content-center">
       <div class="col-md-6">
         <a href="cadastro-imovel.php" class="btn btn-light btn-block"><i class="fas fa-map-marked-alt"></i> Cadastrar Imóvel</a> <br>
-        <a href="cadastro-bairro.php" class="btn btn-light btn-block"><i class="fas fa-map-marker-alt"></i> Cadastrar bairro</a> <br>
-        <a href="cadastro-cidade.php" class="btn btn-light btn-block"><i class="fas fa-globe-africa"></i> Cadastrar Cidade</a> <br>
+        <a href="cadastro-imovel.php" class="btn btn-light btn-block"><i class="far fa-edit"></i> Gerenciar Imóveis</a> <br>
+        <a href="cadastro-bairro.php" class="btn btn-light btn-block"><i class="fas fa-map-marker-alt"></i> Gerenciar Bairros</a> <br>
+        <a href="cadastro-cidade.php" class="btn btn-light btn-block"><i class="fas fa-globe-africa"></i> Gerenciar Cidades</a> <br>
+        <a href="cadastro-categoria.php" class="btn btn-light btn-block"><i class="fas fa-clipboard-list"></i> Gerenciar Categorias</a> <br>
       </div>
     </div>
 
