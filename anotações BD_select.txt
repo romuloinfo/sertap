@@ -18,4 +18,23 @@ Status contrato (acao)
 area_servico
 1 - sim
 0 - não
+----------------------------------------
 
+Cidades cadastradas
+SELECT * FROM `imoveis` WHERE `id_cidade`!= 3290 and `id_cidade`!= 2798 and `id_cidade`!= 2980 AND `id_cidade`!= 3134 and `id_cidade`!= 3288 AND `id_cidade`!= 3398 AND `id_cidade`!= 3448 AND `id_cidade`!= 3484 AND `id_cidade`!= 3519 AND `id_cidade`!= 3648 AND `id_cidade`!= 3688 AND `id_cidade`!= 3856 AND `id_cidade`!= 4073
+3290 
+2798
+2980 
+3134 
+3288 
+3398 
+3448 
+3484 
+3519 
+3648 
+3688 
+3856 
+4073
+
+Deletar as outras cidades q já estavam cadastradas
+DELETE FROM cidades WHERE `id` != 3290 and `id`!= 2798 and `id`!= 2980 AND `id`!= 3134 and `id`!= 3288 AND `id`!= 3398 AND `id`!= 3448 AND `id`!= 3484 AND `id`!= 3519 AND `id`!= 3648 AND `id`!= 3688 AND `id`!= 3856 AND `id`!= 4073

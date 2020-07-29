@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <?php
-    if( isset($_GET['descricao']) ){
-      $id = $_GET['id'];
-      $descricao = $_GET['descricao'];
+    if( isset($_GET['id_bairro']) ){
+      $id = $_GET['id_bairro'];
+      $nome_bairro = $_GET['nome_bairro'];
     }
   ?>
   <head>
@@ -43,41 +43,40 @@
     <br> <br>
     <div class="row justify-content-center">
       <?php
-        if( isset($_GET['descricao']) ){
+        if( isset($_GET['id_bairro']) ){
         ?>
         <div class="col-md-10">
-          <h4 class="lead bg-titulo">Deseja alterar esta categoria?</h4>
+          <h4 class="lead bg-titulo">Deseja alterar o nome deste bairro?</h4>
         </div>
         <div class="col-md-10">
             <form action="" method="GET" class="form-row justify-content-center">
               <div class="form-group col-md-8">
                 <!-- <label for="inputPassword4">Senha</label> -->
-                <input type="text" class="form-control" id="categoria_alterar" name="categoria_alterar" value="<?php if (isset($_GET['descricao'])) print $descricao; ?>"
-                    placeholder="Nome da categoria" required>
+                <input type="text" class="form-control" id="nome_bairro_alterar" name="nome_bairro_alterar" value="<?php if (isset($_GET['nome_bairro'])) print $nome_bairro; ?>"
+                    placeholder="Nome do Bairro" required>
                 <input type="hidden" name="id_alterar" id="id_alterar" value="<?php print $id; ?>">
               </div>
               <div class="form-group col-md-8">
                 <input type="submit" class="btn btn-success btn-block" value="Alterar">
               </div>
               <div class="form-group col-md-8">
-                <a href="cadastro-categoria.php" class="btn btn-outline-success btn-block">Cancelar</a>
+                <a href="cadastro-bairro.php" class="btn btn-outline-success btn-block">Cancelar</a>
               </div>
             </form>
         </div>
         <?php } ?>
         <div class="col-md-10">
           <?php
-            // $id = $_GET['id'];
-            if ( isset($_GET['categoria_alterar']) ){
-              $categoria_alterar = $_GET['categoria_alterar'];
+            if ( isset($_GET['nome_bairro_alterar']) ){
+              $nome_bairro = $_GET['nome_bairro_alterar'];
               $id_alterar = $_GET['id_alterar'];
 
               include "../includes/conexao.php";
-              $sql = " UPDATE categorias SET descricao='$categoria_alterar' WHERE (id='$id_alterar')";
+              $sql = " UPDATE bairros SET nome_bairro='$nome_bairro' WHERE (id_bairro='$id_alterar')";
 
               if ($query = $conexao->query($sql) ){
                 print '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                          Categoria ALTERADA com Sucesso! <a href="cadastro-categoria.php" class="alert-link"> Voltar para Tela GERENCIAR CATEGORIAS.</a>
+                          Bairro ALTERADO com Sucesso! <a href="cadastro-bairro.php" class="alert-link"> Voltar para Tela GERENCIAR BAIRROS.</a>
                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>

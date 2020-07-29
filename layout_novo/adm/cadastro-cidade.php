@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <?php
+    include("funcoes/funcoes.php");
+  ?>
   <head>
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
@@ -21,7 +24,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
     <!-- Ajax -->
-    <script src="../js/ajax.js"></script>
+    <script src="../js/ajax-imoveis.js"></script>
 
     <title>SERTAP IMÓVEIS</title>
 
@@ -33,72 +36,76 @@
       include("../includes/menu-adm.php");
       ?>
     </div>
-    <!-- <div style="margin-top:70px;"></div> -->
 
   <div class="container">
-
-    <?php
-      // include("pesquisa.php");
-      // include("carousel.php");
-    ?>
     <br>
-   <form id="form_contato">
     <div class="row justify-content-center">
       <div class="col-lg-10">
-        <h4 class="lead bg-titulo">Preencha o nome e o estado da Cidade</h4>
-        <br>
-        <div class="form-row">
-            
-            <div class="form-group col-md-12">
-              <!-- <label for="inputPassword4">Senha</label> -->
-              <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Nome da Cidade">
-            </div>
+        <h4 class="lead bg-titulo">
+        Cidades Cadastradas
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_cadastro">
+          <i class="far fa-plus-square"></i> Nova Cidade
+          </button>
+        </h4>
 
-            <div class="form-group col-md-12">
-              <select id="estado" name="estado" class="form-control">
-                <option selected value="">Estado...</option>
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-                <option value="EX">Estrangeiro</option>
-              </select>
-            </div>
-
-        </div>    <!-- formrow -->
-        <button type="button" class="btn btn-success btn-block" onclick="insereContato()"> <i class="fas fa-globe-africa"></i> Cadastrar Cidade</button>
-      <br>
-     </div>
-    </div>
-  </form>
-      <div id="resposta">
+        <?php
+          cidades_cadastradas();
+        ?>
 
       </div>
+    </div>
 
-</div> <!-- container -->
+  </div> <!-- container -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="modal_cadastro" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalCentralizado">Cadastrar uma nova Cidade</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" onclick="atualizarPagina()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+            <div class="form-row justify-content-center">
+              <form class="col-md-12">
+                <div class="form-group col-md-12">
+                  <input type="number" class="form-control" id="id_cidade" name="id_cidade" placeholder="Código da Cidade (Apenas Números)">
+                </div>
+                <div class="form-group col-md-12">
+                  <input type="text" class="form-control" id="nome_cidade" name="nome_cidade" placeholder="Nome da Cidade">
+                </div>
+                <div class="form-group col-md-12">
+                  <select id="estado" name="estado" class="form-control">
+                    <option selected value="">Estado... *</option>
+                    <?php
+                        buscar_estados();
+                    ?>
+                 </select>
+                </div>
+                <div class="form-group col-md-12">
+                  <!-- <input type="submit" class="btn btn-success btn-block" value="Cadastrar Categoria"> -->
+                  <button type="button" class="btn btn-success btn-block" onclick="insereCidade()"> <i class="fas fa-city"></i> Cadastrar Cidade</button>
+                </div>
+              </form>
+              <div id="resposta" class="form-group col-md-12">
+
+              </div>
+          </div>   <!-- formrow -->
+      </div>
+    </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="atualizarPagina()" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <br>
 
     <?php include("../includes/footer-adm.php"); ?>

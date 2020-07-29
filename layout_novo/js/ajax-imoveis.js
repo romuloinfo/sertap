@@ -1,5 +1,102 @@
 /* JavaScript AJAX */
 
+function atualizarPagina() {
+  document.location.reload(true);
+  // window.location.reload(1);
+
+  // setTimeout(function() {
+  //   window.location.reload(1);
+  // }, 3000);
+}
+
+function insereCategoria() {
+  var categoria_cadastrar = document.getElementById('categoria_cadastrar').value;
+
+  var resposta = document.getElementById('resposta');
+
+  var ajax = new XMLHttpRequest();
+
+  // resposta.innerHTML = '<center> <img src="imagens/loading.gif" width="120px"> </center>';
+  resposta.innerHTML = '<center> <img src="../imagens/loading2.gif" width="120px"> </center>';
+
+  ajax.open('GET', 'processa_cadastros.php?categoria_cadastrar=' + categoria_cadastrar, true);
+
+  ajax.onreadystatechange = function () {
+    if (ajax.readyState == 4) {
+      if (ajax.status == 200) {
+        document.getElementById('categoria_cadastrar').value = '';
+        resposta.innerHTML = ajax.responseText;
+      } else {
+        resposta.innerHTML = 'Houve um erro na conexão AJAX: ' + ajax.statusText;
+      }
+    }
+  };
+
+  ajax.send(null);
+}
+
+//INSERIR BAIRRO
+function insereBairro() {
+  var nome_bairro = document.getElementById('nome_bairro').value;
+  var cidade = document.getElementById('cidade').value;
+  // console.log(nome_bairro, cidade);
+  var resposta = document.getElementById('resposta');
+
+  var ajax = new XMLHttpRequest();
+
+  // resposta.innerHTML = '<center> <img src="imagens/loading.gif" width="120px"> </center>';
+  resposta.innerHTML = '<center> <img src="../imagens/loading2.gif" width="120px"> </center>';
+
+  ajax.open('GET', 'processa_cadastros.php?nome_bairro=' + nome_bairro + '&cidade=' + cidade, true);
+
+  ajax.onreadystatechange = function () {
+    if (ajax.readyState == 4) {
+      if (ajax.status == 200) {
+        // document.getElementById('categoria_cadastrar').value = '';
+        resposta.innerHTML = ajax.responseText;
+      } else {
+        resposta.innerHTML = 'Houve um erro na conexão AJAX: ' + ajax.statusText;
+      }
+    }
+  };
+
+  ajax.send(null);
+}
+
+// INSERIR CIDADE
+function insereCidade() {
+  var id_cidade = document.getElementById('id_cidade').value;
+  var nome_cidade = document.getElementById('nome_cidade').value;
+  var estado = document.getElementById('estado').value;
+  // console.log(nome_bairro, cidade);
+  var resposta = document.getElementById('resposta');
+
+  var ajax = new XMLHttpRequest();
+
+  // resposta.innerHTML = '<center> <img src="imagens/loading.gif" width="120px"> </center>';
+  resposta.innerHTML = '<center> <img src="../imagens/loading2.gif" width="120px"> </center>';
+
+  ajax.open(
+    'GET',
+    'processa_cadastros.php?id_cidade=' + id_cidade + '&nome_cidade=' + nome_cidade + '&estado=' + estado,
+    true
+  );
+
+  ajax.onreadystatechange = function () {
+    if (ajax.readyState == 4) {
+      if (ajax.status == 200) {
+        // document.getElementById('categoria_cadastrar').value = '';
+        resposta.innerHTML = ajax.responseText;
+      } else {
+        resposta.innerHTML = 'Houve um erro na conexão AJAX: ' + ajax.statusText;
+      }
+    }
+  };
+
+  ajax.send(null);
+}
+
+//INSERIR IMÓVEL
 function insereImovel() {
   var titulo = document.getElementById('titulo').value;
   var pre_descricao = document.getElementById('pre_descricao').value;
@@ -95,45 +192,6 @@ function insereImovel() {
   ajax.send(null);
 }
 
-function insereCategoria() {
-  var categoria_cadastrar = document.getElementById('categoria_cadastrar').value;
-
-  var resposta = document.getElementById('resposta');
-
-  var ajax = new XMLHttpRequest();
-
-  // resposta.innerHTML = '<center> <img src="imagens/loading.gif" width="120px"> </center>';
-  resposta.innerHTML = '<center> <img src="../imagens/loading2.gif" width="120px"> </center>';
-
-  ajax.open(
-    'GET',
-    'processa_cadastros.php?categoria_cadastrar=' +
-      categoria_cadastrar,
-    true
-  );
-
-  ajax.onreadystatechange = function () {
-    if (ajax.readyState == 4) {
-      if (ajax.status == 200) {
-        document.getElementById('categoria_cadastrar').value = '';
-        resposta.innerHTML = ajax.responseText;
-      } else {
-        resposta.innerHTML = 'Houve um erro na conexão AJAX: ' + ajax.statusText;
-      }
-    }
-  };
-
-  ajax.send(null);
-}
-
-function atualizarPagina(){
-         document.location.reload(true);
-        // window.location.reload(1);
-        
-        // setTimeout(function() {
-        //   window.location.reload(1);
-        // }, 3000);
-}
 /*
 function buscaDados() {
   var nome = document.getElementById('buscanome').value;

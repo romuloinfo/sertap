@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <?php
+    include("funcoes/funcoes.php");
+  ?>
   <head>
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
@@ -21,7 +24,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
     <!-- Ajax -->
-    <script src="../js/ajax.js"></script>
+    <script src="../js/ajax-imoveis.js"></script>
 
     <title>SERTAP IMÓVEIS</title>
 
@@ -33,45 +36,74 @@
       include("../includes/menu-adm.php");
       ?>
     </div>
-    <!-- <div style="margin-top:70px;"></div> -->
 
   <div class="container">
-
-    <?php
-      // include("pesquisa.php");
-      // include("carousel.php");
-    ?>
     <br>
-   <form id="form_contato">
     <div class="row justify-content-center">
       <div class="col-lg-10">
-        <h4 class="lead bg-titulo">Preencha o nome do Bairro e a Cidade</h4>
-        <div class="form-row">
-            
-            <div class="form-group col-md-12">
-              <!-- <label for="inputPassword4">Senha</label> -->
-              <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Nome do Bairro">
-            </div>
+        <h4 class="lead bg-titulo">
+        Bairros Cadastrados
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_cadastro">
+          <i class="far fa-plus-square"></i> Novo Bairro
+          </button>
+        </h4>
 
-            <div class="form-group col-md-12">
-              <select id="cidade" name="cidade" class="form-control">
-                <option selected value="">Cidade...</option>
-                <option value="">??</option>
-                <option value="">??</option>
-              </select>
-            </div>
-
-        </div>    <!-- formrow -->
-        <button type="button" class="btn btn-success btn-block" onclick="insereContato()"> <i class="fas fa-map-marker-alt"></i> Cadastrar Bairro</button>
-      <br>
-     </div>
-    </div>
-  </form>
-      <div id="resposta">
+        <?php
+          bairros_cadastrados();
+        ?>
 
       </div>
+    </div>
 
-</div> <!-- container -->
+  </div> <!-- container -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="modal_cadastro" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalCentralizado">Cadastrar Novo Bairro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" onclick="atualizarPagina()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+            <div class="form-row justify-content-center">
+              <form class="col-md-12">
+                <div class="form-group col-md-12">
+                  <input type="text" class="form-control" id="nome_bairro" name="nome_bairro" placeholder="Nome do Bairro">
+                </div>
+                <div class="form-group col-md-12">
+                  <select id="cidade" name="cidade" class="form-control">
+                    <option selected value="">Cidade... *</option>
+                    <option value="3290">Janaúba</option>
+                    <?php
+                        buscar_cidades();
+                    ?>
+                 </select>
+                </div>
+                <div class="form-group col-md-12">
+                  <!-- <input type="submit" class="btn btn-success btn-block" value="Cadastrar Categoria"> -->
+                  <button type="button" class="btn btn-success btn-block" onclick="insereBairro()"> <i class="fas fa-map-marker-alt"></i> Cadastrar Bairro</button>
+                </div>
+              </form>
+              <div id="resposta" class="form-group col-md-12">
+
+              </div>
+          </div>   <!-- formrow -->
+      </div>
+    </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="atualizarPagina()" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <br>
 
     <?php include("../includes/footer-adm.php"); ?>
