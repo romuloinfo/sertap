@@ -175,7 +175,7 @@ function cidades_cadastradas(){
         <td>$id_cidade</td>
         <td>$descricao</td>
 
-        <td class='text-center'> <a href='cadastro-cidade-alterar.php?id_cidade=$id_cidade'><i class='far fa-edit'></i> </a> </td>
+        <td class='text-center'> <a href='cadastro-cidade-alterar.php?id_cidade=$id_cidade&nome_cidade=$descricao'><i class='far fa-edit'></i> </a> </td>
         <td class='text-center'><a href='cadastro-cidade-excluir.php?id_cidade=$id_cidade&nome_cidade=$descricao'><i class='far fa-trash-alt'></i> </a> </td>
       </tr>";
     }
