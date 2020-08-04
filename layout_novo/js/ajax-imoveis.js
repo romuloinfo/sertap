@@ -9,6 +9,57 @@ function atualizarPagina() {
   // }, 3000);
 }
 
+// ALTERAR USUARIO
+function alteraUsuario() {
+  var id_usuario_alterar = document.getElementById('id_alterar').value;
+  var nome = document.getElementById('nome').value;
+  var senha = document.getElementById('senha').value;
+  var tipo_usuario = document.getElementById('tipo_usuario').value;
+  var grupo_id = document.getElementById('grupo_id').value;
+  var status = document.getElementById('status').value;
+
+  var resposta = document.getElementById('resposta');
+
+  var ajax = new XMLHttpRequest();
+
+  // resposta.innerHTML = '<center> <img src="imagens/loading.gif" width="120px"> </center>';
+  resposta.innerHTML = '<center> <img src="../imagens/loading2.gif" width="120px"> </center>';
+
+  ajax.open(
+    'GET',
+    'processa_cadastros.php?id_usuario_alterar=' +
+      id_usuario_alterar +
+      '&nome_usuario_alterar=' +
+      nome +
+      '&senha_usuario_alterar=' +
+      senha +
+      '&tipo_usuario=' +
+      tipo_usuario +
+      '&grupo_id=' +
+      grupo_id +
+      '&status=' +
+      status,
+    true
+  );
+
+  ajax.onreadystatechange = function () {
+    if (ajax.readyState == 4) {
+      if (ajax.status == 200) {
+        resposta.innerHTML = ajax.responseText;
+        // document.getElementById('assunto').value = '';
+        // document.getElementById('nome').value = '';
+        // document.getElementById('email').value = '';
+        // document.getElementById('telefone').value = '';
+        // document.getElementById('mensagem').value = '';
+      } else {
+        resposta.innerHTML = 'Houve um erro na conexão AJAX: ' + ajax.statusText;
+      }
+    }
+  };
+
+  ajax.send(null);
+}
+
 function insereCategoria() {
   var categoria_cadastrar = document.getElementById('categoria_cadastrar').value;
 
@@ -96,6 +147,63 @@ function insereCidade() {
   ajax.send(null);
 }
 
+// INSERIR CLIENTE
+function insereCliente() {
+  var nome = document.getElementById('nome').value;
+  var celular = document.getElementById('celular').value;
+  var telefone = document.getElementById('telefone').value;
+  var email = document.getElementById('email').value;
+  var cpf_cnpj = document.getElementById('cpf_cnpj').value;
+  var endereco = document.getElementById('endereco').value;
+  var bairro = document.getElementById('bairro').value;
+  var cidade = document.getElementById('cidade').value;
+
+  var resposta = document.getElementById('resposta');
+
+  var ajax = new XMLHttpRequest();
+
+  // resposta.innerHTML = '<center> <img src="imagens/loading.gif" width="120px"> </center>';
+  resposta.innerHTML = '<center> <img src="../imagens/loading2.gif" width="120px"> </center>';
+
+  ajax.open(
+    'GET',
+    'processa_cadastros.php?nome_cliente=' +
+      nome +
+      '&celular=' +
+      celular +
+      '&telefone=' +
+      telefone +
+      '&email=' +
+      email +
+      '&cpf_cnpj=' +
+      cpf_cnpj +
+      '&endereco=' +
+      endereco +
+      '&bairro=' +
+      bairro +
+      '&cidade=' +
+      cidade,
+    true
+  );
+
+  ajax.onreadystatechange = function () {
+    if (ajax.readyState == 4) {
+      if (ajax.status == 200) {
+        resposta.innerHTML = ajax.responseText;
+        // document.getElementById('assunto').value = '';
+        // document.getElementById('nome').value = '';
+        // document.getElementById('email').value = '';
+        // document.getElementById('telefone').value = '';
+        // document.getElementById('mensagem').value = '';
+      } else {
+        resposta.innerHTML = 'Houve um erro na conexão AJAX: ' + ajax.statusText;
+      }
+    }
+  };
+
+  ajax.send(null);
+}
+
 //INSERIR IMÓVEL
 function insereImovel() {
   var titulo = document.getElementById('titulo').value;
@@ -171,6 +279,54 @@ function insereImovel() {
       area_servico +
       '&destaque=' +
       destaque,
+    true
+  );
+
+  ajax.onreadystatechange = function () {
+    if (ajax.readyState == 4) {
+      if (ajax.status == 200) {
+        resposta.innerHTML = ajax.responseText;
+        // document.getElementById('assunto').value = '';
+        // document.getElementById('nome').value = '';
+        // document.getElementById('email').value = '';
+        // document.getElementById('telefone').value = '';
+        // document.getElementById('mensagem').value = '';
+      } else {
+        resposta.innerHTML = 'Houve um erro na conexão AJAX: ' + ajax.statusText;
+      }
+    }
+  };
+
+  ajax.send(null);
+}
+
+// INSERIR USUARIO
+function insereUsuario() {
+  var nome = document.getElementById('nome').value;
+  var senha = document.getElementById('senha').value;
+  var tipo_usuario = document.getElementById('tipo_usuario').value;
+  var grupo_id = document.getElementById('grupo_id').value;
+  var status = document.getElementById('status').value;
+
+  var resposta = document.getElementById('resposta');
+
+  var ajax = new XMLHttpRequest();
+
+  // resposta.innerHTML = '<center> <img src="imagens/loading.gif" width="120px"> </center>';
+  resposta.innerHTML = '<center> <img src="../imagens/loading2.gif" width="120px"> </center>';
+
+  ajax.open(
+    'GET',
+    'processa_cadastros.php?nome_usuario=' +
+      nome +
+      '&senha=' +
+      senha +
+      '&tipo_usuario=' +
+      tipo_usuario +
+      '&grupo_id=' +
+      grupo_id +
+      '&status=' +
+      status,
     true
   );
 

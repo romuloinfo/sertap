@@ -2,7 +2,7 @@
   <div class="row" style="padding: 0px;">
     <div class="col" style="padding-top:15px;">
       <p class="text-right lead" id="contato-principal">
-       <strong>Painel de Controle</strong> 
+       <strong>Painel de Controle</strong>
       </p>
     </div>
   </div>
@@ -50,13 +50,16 @@
             <a class="nav-link" style="color:#000; text-shadow:1px 1px 30px #fff;" href="imoveis.php"><i class="fas fa-warehouse"></i> Imóveis</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color:#000; text-shadow:1px 1px 30px #fff;" href="cliente.php"><i class="fas fa-user-tie"></i> Clientes</a>
+            <a class="nav-link" style="color:#000; text-shadow:1px 1px 30px #fff;" href="cadastro-cliente.php"><i class="fas fa-user-tie"></i> Clientes</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" style="color:#000; text-shadow:1px 1px 30px #fff;" href="categoria.php"><i class="fas fa-clipboard-list"></i> Categorias</a>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link" style="color:#000; text-shadow:1px 1px 30px #fff;" href="usuarios.php"><i class="fas fa-users"></i> Usuários</a>
+            <a class="nav-link" style="color:#000; text-shadow:1px 1px 30px #fff;" href="cadastro-usuario.php"><i class="fas fa-users"></i> Usuários</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color:#000; text-shadow:1px 1px 30px #fff;" href="mensagens.php"><i class="fas fa-envelope"></i> Mensagens</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" style="color:#000; text-shadow:1px 1px 30px #fff;" href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>

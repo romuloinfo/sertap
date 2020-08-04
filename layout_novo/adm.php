@@ -1,5 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<?php
+if( isset( $_GET['usuario']) ){
+      $usuario_login = $_GET['usuario'];
+      $senha_login = $_GET['senha'];
+
+      include "includes/conexao.php";
+      $senha_login = md5($senha_login);
+      $sql = "select * from usuarios where usuario = '$usuario_login' AND senha = '$senha_login'";
+
+      $resultado = $conexao->query($sql);
+
+      if($resultado){
+        $result = mysqli_fetch_assoc($resultado);
+
+        if ( isset($result["id"]) ) {
+          session_start();
+          $_SESSION["id_login"] = $result["id"];
+          $_SESSION["senha_login"] = $result["senha"];
+          $_SESSION["status_login"] = $result["status"];
+          $_SESSION["usuario_login"] = $result["usuario"];
+          $_SESSION["nome_login"] = $result["nome"];
+          $_SESSION["grupo_id_login"] = $result["grupo_id"];
+
+          if ($result["status"] == "0") {
+            print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  <strong>Atenção!</strong> Este usuário está DESATIVADO. Entre em contato com o administrador para solicitar a alteração.
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>';
+          }
+          else {
+            // print "Login realizado.";
+            header("location:adm/index.php");
+          }
+        }
+        else {
+          print '<div class="text-center alert alert-warning alert-dismissible fade show" role="alert">
+                  <strong>Atenção!</strong> USUÁRIO e SENHA não conferem, tente novamente!
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>';
+        }
+      }
+
+  }
+
+?>
   <head>
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
@@ -37,28 +86,36 @@
 
   <div class="container">
 
-    <br> <br> <br> 
-   <form id="form_contato">
-    <div class="row justify-content-center">
-      <div class="col-md-9 col-lg-6 background-login border">
-        <h4 class="lead">Confirme as suas credenciais</h4>
-          <div class="form-row">
-            <div class="form-group col-md-12">
-               <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário">
+    <br> <br> <br>
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <form method="get" action="">
+          <div class=" background-login border">
+            <h4 class="lead">Confirme as suas credenciais</h4>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" required>
+              </div>
+              <div class="form-group col-md-12">
+                <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required>
+              </div>
             </div>
-            <div class="form-group col-md-12">
-               <input type="password" class="form-control" id="usuario" name="usuario" placeholder="Senha">
-            </div>
+
+            <input type="submit" class="btn btn-success btn-block" value="Login">
+
+            <!-- <button type="button" class="btn btn-success btn-block" onclick="login()"> <i class="fas fa-user"></i> Login</button> -->
+          <br>
           </div>
+        </form>
+        <div id="resposta" class="">
+          <?php
 
-        <button type="button" class="btn btn-success btn-block" onclick="insereContato()"> <i class="fas fa-user"></i> Login</button>
-      <br>
-     </div>
+          ?>
+        </div>
+
     </div>
-  </form>
-      <div id="resposta">
-
-      </div>
+  </div>  <!-- row -->
 
 </div> <!-- container -->
 <br>

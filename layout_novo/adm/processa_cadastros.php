@@ -1,4 +1,91 @@
 <?php
+// alterar USUÁRIO
+if ( isset($_GET['id_usuario_alterar']) and isset($_GET['nome_usuario_alterar']) and isset($_GET['senha_usuario_alterar']) and isset($_GET['tipo_usuario']) and isset($_GET['grupo_id']) ){
+  $id_alterar = $_GET['id_usuario_alterar'];
+  $nome = $_GET['nome_usuario_alterar'];
+  $senha_alterar = $_GET['senha_usuario_alterar'];
+  $tipo_usuario = $_GET['tipo_usuario'];
+  $grupo_id = $_GET['grupo_id'];
+  $status = $_GET['status'];
+
+  sleep(1);
+  if( strlen($nome) < 1 ){
+    print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Você não digitou o Nome do Usuário.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  }
+  elseif( strlen($senha_alterar) < 1 ){
+    print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Você não digitou a SENHA.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  }
+  elseif( strlen($tipo_usuario) < 1 ){
+    print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Você não selecionou o tipo de usuário.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  }
+  elseif( strlen($grupo_id) < 1 ){
+    print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Você não selecionou o grupo do Usuário.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  }
+  elseif( strlen($status) < 1 ){
+    print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Você não informou o STATUS do usuário.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  }
+  else{
+      include "../includes/conexao.php";
+      print "Senha antiga $senha_alterar";
+      $senha_alterar = md5($senha_alterar);
+      print "Nova senha $senha_alterar";
+
+      // $sql = "INSERT INTO usuarios (senha, status, usuario, nome, grupo_id)
+      // VALUES ('$senha','$status','$tipo_usuario','$nome_usuario','$grupo_id')";
+
+      $sql = " UPDATE usuarios
+              SET nome='$nome',
+              senha='$senha_alterar',
+              status='$status',
+              usuario='$tipo_usuario',
+              grupo_id='$grupo_id'
+              WHERE (id='$id_alterar')";
+
+      if ($query = $conexao->query($sql) ){
+        print '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                  Usuário Alterado com Sucesso! <a href="cadastro-usuario.php" class="alert-link"> Voltar para Tela GERENCIAR USUÁRIOS.</a>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>';
+
+      }else{
+        print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Falha ao alterar usuário, favor tentar novamente.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+      }
+  }
+}
+
+
 
 // Cadastrar Bairro
 if ( isset($_GET['nome_bairro']) and isset($_GET['cidade']) ){
@@ -121,6 +208,132 @@ if ( isset($_GET['id_cidade']) and isset($_GET['nome_cidade']) and isset($_GET['
       }else{
         print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
               Verifique o Código (ID) da Cidade. Possivelmente já existe outra cidade cadastrada com este código.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+      }
+  }
+}
+
+
+// Cadastrar CLIENTE
+if ( isset($_GET['nome_cliente']) and isset($_GET['endereco']) and isset($_GET['celular']) and isset($_GET['cpf_cnpj']) ){
+  $nome_cliente = $_GET['nome_cliente'];
+  $celular = $_GET['celular'];
+  $email = $_GET['email'];
+  $cpf_cnpj = $_GET['cpf_cnpj'];
+  $endereco = $_GET['endereco'];
+  $bairro = $_GET['bairro'];
+  $cidade = $_GET['cidade'];
+
+  sleep(1);
+  if( strlen($nome_cliente) < 1 ){
+    print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Você não digitou o Nome do Cliente.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  }
+  elseif( strlen($cidade) < 1 ){
+    print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Você não digitou a cidade do Cliente.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  }
+  else{
+      include "../includes/conexao.php";
+      $sql = "INSERT INTO clientes (nome, celular, email, cpf_cnpj, endereco, bairro, id_cidade)
+      VALUES ('$nome_cliente','$celular','$email','$cpf_cnpj','$endereco','$bairro','$cidade')";
+
+      if ($query = $conexao->query($sql) ){
+        print '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                  Cliente Cadastrado com Sucesso! <a href="cadastro-cliente.php" class="alert-link"> Voltar para Tela GERENCIAR CLIENTES.</a>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>';
+
+      }else{
+        print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Falha ao cadastrar cliente, favor tentar novamente.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+      }
+  }
+}
+
+// Cadastrar USUÁRIO
+if ( isset($_GET['nome_usuario']) and isset($_GET['senha']) and isset($_GET['tipo_usuario']) and isset($_GET['grupo_id']) ){
+  $nome_usuario = $_GET['nome_usuario'];
+  $senha_usuario = $_GET['senha'];
+  $tipo_usuario = $_GET['tipo_usuario'];
+  $grupo_id = $_GET['grupo_id'];
+  $status = $_GET['status'];
+
+  sleep(1);
+  if( strlen($nome_usuario) < 1 ){
+    print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Você não digitou o Nome do Usuário.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  }
+  elseif( strlen($senha_usuario) < 1 ){
+    print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Você não digitou a SENHA.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  }
+  elseif( strlen($tipo_usuario) < 1 ){
+    print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Você não selecionou o tipo de usuário.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  }
+  elseif( strlen($grupo_id) < 1 ){
+    print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Você não selecionou o grupo do Usuário.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  }
+  elseif( strlen($status) < 1 ){
+    print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Você não informou o STATUS do usuário.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  }
+  else{
+      include "../includes/conexao.php";
+      $senha_usuario = md5($senha_usuario);
+      $sql = "INSERT INTO usuarios (senha, status, usuario, nome, grupo_id)
+      VALUES ('$senha_usuario','$status','$tipo_usuario','$nome_usuario','$grupo_id')";
+
+      if ($query = $conexao->query($sql) ){
+        print '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                  Usuário Cadastrado com Sucesso! <a href="cadastro-usuario.php" class="alert-link"> Voltar para Tela GERENCIAR USUÁRIOS.</a>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>';
+
+      }else{
+        print '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Falha ao cadastrar usuário, favor tentar novamente.
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>

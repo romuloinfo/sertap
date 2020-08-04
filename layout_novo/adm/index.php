@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<?php
+    session_start();
+?>
   <head>
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
@@ -42,8 +45,17 @@
       // include("carousel.php");
     ?>
     <br>
-    Área Administrativa
-
+    Área Administrativa <br>
+    Olá <?php print $_SESSION["nome_login"]; ?>
+    <br>
+    <?php
+          $_SESSION["id_login"];
+          $_SESSION["senha_login"];
+          $_SESSION["status_login"];
+          $_SESSION["usuario_login"];
+          $_SESSION["nome_login"];
+          $_SESSION["grupo_id_login"];
+    ?>
 </div> <!-- container -->
 <br>
 

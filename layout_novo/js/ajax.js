@@ -46,6 +46,33 @@ function insereContato() {
 
   ajax.send(null);
 }
+
+// LOGIN
+function login() {
+  var usuario = document.getElementById('usuario').value;
+  var senha = document.getElementById('senha').value;
+  console.log(usuario + senha);
+  var resposta = document.getElementById('resposta');
+
+  var ajax = new XMLHttpRequest();
+
+  // resposta.innerHTML = '<center> <img src="imagens/loading.gif" width="120px"> </center>';
+  resposta.innerHTML = '<center> <img src="imagens/loading2.gif" width="120px"> </center>';
+
+  ajax.open('GET', 'processa_consultas.php?usuario=' + usuario + '&senha=' + senha, true);
+
+  ajax.onreadystatechange = function () {
+    if (ajax.readyState == 4) {
+      if (ajax.status == 200) {
+        resposta.innerHTML = ajax.responseText;
+      } else {
+        resposta.innerHTML = 'Houve um erro na conexão AJAX: ' + ajax.statusText;
+      }
+    }
+  };
+
+  ajax.send(null);
+}
 /*
 function buscaDados() {
   var nome = document.getElementById('buscanome').value;

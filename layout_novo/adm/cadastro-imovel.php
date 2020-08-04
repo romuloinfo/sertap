@@ -50,7 +50,7 @@
       <div class="col-lg-10">
         <h4 class="lead bg-titulo">Descrição do Imóvel que deseja cadastrar</h4>
         <div class="form-row">
-            
+
             <div class="form-group col-md-12">
               <!-- <label for="inputPassword4">Senha</label> -->
               <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título *">
@@ -60,7 +60,7 @@
               <!-- <label for="inputPassword4">Senha</label> -->
               <input type="text" class="form-control" id="pre_descricao" name="pre_descricao" placeholder="Pré Descrição">
             </div>
-          
+
             <div class="form-group col-md-6">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -68,8 +68,8 @@
                 </div>
                 <input type="number" class="form-control" id="valor" name="valor" placeholder="Valor *" aria-describedby="inputGroupPrepend2">
               </div>
-            </div> 
-        
+            </div>
+
         </div>   <!-- formrow -->
         <div class="form-row">
 
@@ -77,7 +77,7 @@
               <!-- <label for="exampleFormControlTextarea1">Exemplo de textarea</label> -->
               <textarea class="form-control" id="descricao" name="descricao" rows="2" placeholder="Descrição"></textarea>
             </div>
-           
+
             <div class="form-group col-md-6">
               <!-- <label for="assunto">Assunto</label> -->
               <select id="tipo" name="tipo" class="form-control">
@@ -91,8 +91,8 @@
               <!-- <label for="assunto">Assunto</label> -->
               <select id="categoria" name="categoria" class="form-control">
                 <option selected value="">Categoria... *</option>
-                <?php 
-                  buscar_categorias(); 
+                <?php
+                  buscar_categorias();
                   ?>
                 <!-- <option value="4">Apartamento</option>
                 <option value="7">Área</option>
@@ -106,11 +106,11 @@
                 <option value="10">Terreno</option> -->
               </select>
             </div>
-          
+
           </div>          <!-- formrow -->
 
           <h4 class="lead bg-titulo">Endereço</h4>
-          
+
           <div class="form-row">
 
             <div class="form-group col-md-6">
@@ -118,19 +118,20 @@
                 <option selected value="">Cidade... *</option>
                 <option value="3290">Janaúba</option>
                  <?php
-                    buscar_cidades(); 
-                 ?> 
+                    buscar_cidades();
+                 ?>
               </select>
             </div>
 
             <div class="form-group col-md-6">
               <select id="bairro" name="bairro" class="form-control">
                 <option selected value="">Bairro...</option>
-                <option value="">??</option>
-                <option value="">??</option>
+                 <?php
+                    buscar_bairros();
+                 ?>
               </select>
             </div>
-              
+
             <div class="form-group col-md-12">
               <!-- <label for="inputEmail4">Email</label> -->
               <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço">
