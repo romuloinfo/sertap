@@ -41,7 +41,7 @@
     <br>
     <div class="row justify-content-center">
       <div class="col-lg-12">
-        <h4 class="lead bg-titulo">
+        <h4 class="lead bg-titulo" >
         Clientes Cadastrados
           <!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_cadastro"> -->
           <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">

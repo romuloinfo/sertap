@@ -167,8 +167,8 @@
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="4">5</option>
-              <option value="5 ou mais">6 ou mais</option>
+              <option value="5">5</option>
+              <option value="6">6 ou mais</option>
             </select>
           </div>
 
@@ -181,7 +181,7 @@
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="5 ou mais">5 ou mais</option>
+              <option value="5">5 ou mais</option>
             </select>
           </div>
 
@@ -194,7 +194,7 @@
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="5 ou mais">5 ou mais</option>
+              <option value="5">5 ou mais</option>
             </select>
           </div>
 
@@ -207,7 +207,7 @@
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="5 ou mais">5 ou mais</option>
+              <option value="5">5 ou mais</option>
             </select>
           </div>
 

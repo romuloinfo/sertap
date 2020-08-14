@@ -1,5 +1,5 @@
-      <div class="row justify-content-md-center">
-        <div class="col col-lg-8 text-center">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -8,23 +8,23 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block w-100" src="imagens/5.jpg" alt="Primeiro Slide" />
+                <img class="d-block w-100" src="imagens/9_1.png" alt="Primeiro Slide" />
                 <div class="carousel-caption d-none d-md-block cor-de-fundo-caroucel">
-                  <h5>Teste...</h5>
-                  <p>ok ok ok ok ok ok </p>
+                  <h5>SERTAP IMÓVEIS</h5>
+                  <p>Venda, Avaliação e Locação de móveis.</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="imagens/7_.jpg" alt="Segundo Slide" />
+                <img class="d-block w-100" src="imagens/8.jpg" alt="Segundo Slide" />
                 <div class="carousel-caption d-none d-md-block cor-de-fundo-caroucel">
-                  <h5>Teste...</h5>
-                  <p>ok ok ok ok ok ok </p>
+                  <h5>SERTAP IMÓVEIS</h5>
+                  <p>Realize o sonho da casa própria.</p>
                 </div></div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="imagens/cab2.jpg" alt="Terceiro Slide" />
+                <img class="d-block w-100" src="imagens/1_2.png" alt="Terceiro Slide" />
                 <div class="carousel-caption d-none d-md-block cor-de-fundo-caroucel">
-                  <h5>Teste...</h5>
-                  <p>ok ok ok ok ok ok </p>
+                  <h5>SERTAP Imóveis</h5>
+                  <p>Os melhores imóveis você encontra aqui.</p>
                 </div></div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

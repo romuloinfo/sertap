@@ -2,8 +2,8 @@
 <html lang="pt-br">
   <head>
     <!-- Meta tags Obrigatórias -->
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="../imagens/favicon.png">
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="imagens/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS -->
@@ -14,50 +14,57 @@
       crossorigin="anonymous"
     />
 
-    <!-- CSS próprio -->
-    <link rel="stylesheet" href="../css/estilo.css">
-
     <!--Ícones  -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-    <!-- Ajax -->
-    <script src="../js/ajax.js"></script>
+    <!-- CSS próprio -->
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/galeria2.css">
+
+    <!-- JS próprio -->
+    <script src="js/galeria2.js"></script>
 
     <title>SERTAP IMÓVEIS</title>
-
-
   </head>
   <body>
-     <div class="bg-sertap-adm">
+    <div class="bg-sertap">
       <?php
-      include("../includes/menu-adm.php");
+      include("includes/menu.php");
       ?>
     </div>
-    <!-- <div style="margin-top:70px;"></div> -->
 
-  <div class="container">
+    <!-- Se colocar o menu fixo é necessário essa linha
+      <div style="margin-top:70px;"></div> -->
 
-    <?php
-      // include("pesquisa.php");
-      // include("carousel.php");
-    ?>
-    <br>
-    <h4 class="lead bg-titulo">Gerenciar Imóveis</h4>
-    <br>
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <a href="cadastro-imovel.php" class="btn btn-light btn-block"><i class="fas fa-map-marked-alt"></i> Cadastrar Imóvel</a> <br>
-        <a href="gerenciar-imovel.php" class="btn btn-light btn-block"><i class="far fa-edit"></i> Gerenciar Imóveis</a> <br>
-        <a href="cadastro-bairro.php" class="btn btn-light btn-block"><i class="fas fa-map-marker-alt"></i> Gerenciar Bairros</a> <br>
-        <a href="cadastro-cidade.php" class="btn btn-light btn-block"><i class="fas fa-globe-africa"></i> Gerenciar Cidades</a> <br>
-        <a href="cadastro-categoria.php" class="btn btn-light btn-block"><i class="fas fa-clipboard-list"></i> Gerenciar Categorias</a> <br>
+    <div class="container">
+    <div class="row justify-content-md-center border">
+        
+      <div class="col col-md-2 text-center bg-success" style="height:300px">
+            Menu
       </div>
-    </div>
-
-
-</div> <!-- container -->
+      <div class="col col-md-10 text-center bg-secondary">
+            <div class="row">
+              <div class="col col-md-6 text-center border">
+                  1
+              </div>
+              <div class="col col-md-6 text-center border">
+                  2
+              </div>
+              <div class="col col-md-6 text-center border">
+                  3
+              </div>
+              <div class="col col-md-6 text-center border">
+                  4
+              </div>
+            </div>
+      </div>
+      
+      </div>      <!-- row -->    
+    </div>    <!-- container -->
 <br>
-<?php include("../includes/footer-adm.php"); ?>
+
+<?php include("includes/footer.php"); ?>
+
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->

@@ -114,8 +114,8 @@ function categorias_cadastradas(){
         <td scope='row'>$id</td>
         <td>$descricao</td>
 
-        <td class='text-center'> <a href='cadastro-categoria-alterar.php?id=$id&descricao=$descricao'><i class='far fa-edit'></i> </a> </td>
-        <td class='text-center'><a href='cadastro-categoria-excluir.php?id=$id&descricao=$descricao'><i class='far fa-trash-alt'></i> </a> </td>
+        <td class='text-center'> <a class='link-cor-padrao' data-toggle='tooltip' title='Editar' href='cadastro-categoria-alterar.php?id=$id&descricao=$descricao'><i class='far fa-edit'></i> </a> </td>
+        <td class='text-center'><a class='link-cor-padrao' data-toggle='tooltip' title='Excluir' href='cadastro-categoria-excluir.php?id=$id&descricao=$descricao'><i class='far fa-trash-alt'></i> </a> </td>
       </tr>";
     }
     print"</tbody> </table>";
@@ -160,8 +160,8 @@ function categorias_cadastradas(){
         <td>$nome_bairro</td>
         <td>$nome_cidade</td>
 
-        <td class='text-center'> <a href='cadastro-bairro-alterar.php?id_bairro=$id_bairro&nome_bairro=$nome_bairro&id_cidade=$nome_cidade'><i class='far fa-edit'></i> </a> </td>
-        <td class='text-center'><a href='cadastro-bairro-excluir.php?id_bairro=$id_bairro&nome_bairro=$nome_bairro'><i class='far fa-trash-alt'></i> </a> </td>
+        <td class='text-center'> <a class='link-cor-padrao' data-toggle='tooltip' title='Clique para Editar' href='cadastro-bairro-alterar.php?id_bairro=$id_bairro&nome_bairro=$nome_bairro&id_cidade=$nome_cidade'><i class='far fa-edit'></i> </a> </td>
+        <td class='text-center'><a class='link-cor-padrao' data-toggle='tooltip' title='Clique para Excluir' href='cadastro-bairro-excluir.php?id_bairro=$id_bairro&nome_bairro=$nome_bairro'><i class='far fa-trash-alt'></i> </a> </td>
       </tr>";
     }
     print"</tbody> </table>";
@@ -207,8 +207,8 @@ function cidades_cadastradas(){
         <td>$id_cidade</td>
         <td>$descricao</td>
 
-        <td class='text-center'> <a href='cadastro-cidade-alterar.php?id_cidade=$id_cidade&nome_cidade=$descricao'><i class='far fa-edit'></i> </a> </td>
-        <td class='text-center'><a href='cadastro-cidade-excluir.php?id_cidade=$id_cidade&nome_cidade=$descricao'><i class='far fa-trash-alt'></i> </a> </td>
+        <td class='text-center'> <a class='link-cor-padrao' data-toggle='tooltip' title='Editar' href='cadastro-cidade-alterar.php?id_cidade=$id_cidade&nome_cidade=$descricao'><i class='far fa-edit'></i> </a> </td>
+        <td class='text-center'><a class='link-cor-padrao' data-toggle='tooltip' title='Excluir' href='cadastro-cidade-excluir.php?id_cidade=$id_cidade&nome_cidade=$descricao'><i class='far fa-trash-alt'></i> </a> </td>
       </tr>";
     }
     print"</tbody> </table>";
@@ -278,25 +278,68 @@ function clientes_cadastrados(){
     foreach ($result as $resultado){
       $id = $resultado['id'];
       $nome = $resultado['nome'];
-      $endereco = $resultado['endereco'];
-      $contato = $resultado['telefone']." / ".$resultado['celular'];
+      // $endereco = $resultado['endereco'];
+      $endereco = strlen($resultado['telefone']);
+      if (strlen($resultado['celular'])>7) $contato = "<i class='fas fa-mobile-alt'></i> ".$resultado['celular'];
+      if (strlen($resultado['telefone'])>7) $contato = $contato." <br><i class='fas fa-phone'></i> ".$resultado['telefone'];      
+      
       $cidade = $resultado['cidade'];
 
 
       print "<tr>
         <td scope='row'>$id</td>
-        <td>$nome</td>
+        <td><a href='cadastro-cliente-detalhes.php?id_cliente=$id' class='link-cor-padrao' data-toggle='tooltip' data-placement='right' title='Clique para visualisar os detalhes'>$nome</a></td>
         <td>$endereco</td>
         <td>$contato</td>
         <td>$cidade</td>
 
-        <td class='text-center'> <a href='cadastro-cliente-alterar.php?id_cliente=$id'><i class='far fa-edit'></i> </a> </td>
-        <td class='text-center'><a href='cadastro-cliente-excluir.php?id_cliente=$id&nome_cliente=$nome'><i class='far fa-trash-alt'></i> </a> </td>
+        <td class='text-center'> <a class='link-cor-padrao' data-toggle='tooltip' title='Clique para Editar' href='cadastro-cliente-alterar.php?id_cliente=$id'><i class='far fa-edit'></i> </a> </td>
+        <td class='text-center'><a class='link-cor-padrao' data-toggle='tooltip' title='Clique para Excluir' href='cadastro-cliente-excluir.php?id_cliente=$id&nome_cliente=$nome'><i class='far fa-trash-alt'></i> </a> </td>
       </tr>";
+      $contato = "";
     }
     print"</tbody> </table>";
     }
   }
+
+
+//Buscar detalhes de um único imóvel
+function imovel_cadastrado($id){
+  include "../includes/conexao.php";
+  
+  $sql = "SELECT * FROM imoveis WHERE id = $id";
+  $resultado = $conexao->query($sql);
+  $resultado = mysqli_fetch_assoc($resultado);
+  if (strlen($resultado["bairro"])>0) {
+      $sql = "SELECT i.*, c.descricao as nome_cidade, b.nome_bairro, ca.descricao as nome_categoria 
+              FROM imoveis i 
+              INNER JOIN cidades c ON i.id_cidade = c.id
+              INNER JOIN bairros b ON i.bairro = b.id_bairro
+              INNER JOIN categorias ca ON i.id_categoria = ca.id
+              WHERE i.id = $id
+              ORDER BY i.id DESC";  
+  }
+   
+  else{
+      $sql = "SELECT i.*, c.descricao as nome_cidade, ca.descricao as nome_categoria 
+              FROM imoveis i 
+              INNER JOIN cidades c ON i.id_cidade = c.id
+              INNER JOIN categorias ca ON i.id_categoria = ca.id
+              WHERE i.id = $id
+              ORDER BY i.id DESC";  
+  }
+  
+  $resultado = $conexao->query($sql);
+
+  if($resultado){
+    $result = array();
+    while( $linha = mysqli_fetch_assoc($resultado) ){
+      $result[] = $linha;
+  }
+  return $result;
+  }
+}
+
 
 //mostrar imoveis cadastrados na tabela
 function imoveis_cadastrados(){
@@ -350,9 +393,9 @@ function imoveis_cadastrados(){
         <td>$descricao</td>
         <td>$status_site</td>
         <td>$acao</td>
-        <td class='text-center'> <a href='gerenciar-imovel-imagem.php?id_imovel=$id'><i class='fas fa-camera'></i></i> </a> </td>
-        <td class='text-center'> <a href='gerenciar-imovel-alterar.php?id_imovel=$id'><i class='far fa-edit'></i> </a> </td>
-        <td class='text-center'> <a href='gerenciar-imovel-excluir.php?id_imovel=$id'><i class='far fa-trash-alt'></i> </a> </td>
+        <td class='text-center'> <a class='link-cor-padrao' data-toggle='tooltip' title='Ver e Editar Fotos do Imóvel' href='gerenciar-imovel-imagem.php?id_imovel=$id'><i class='fas fa-camera'></i></i> </a> </td>
+        <td class='text-center'> <a class='link-cor-padrao' data-toggle='tooltip' title='Clique para Editar' href='gerenciar-imovel-alterar.php?id_imovel=$id'><i class='far fa-edit'></i> </a> </td>
+        <td class='text-center'> <a class='link-cor-padrao' data-toggle='tooltip' title='Clique para Excluir' href='gerenciar-imovel-excluir.php?id_imovel=$id'><i class='far fa-trash-alt'></i> </a> </td>
       </tr>";
     }
     print"</tbody> </table>";
@@ -475,7 +518,7 @@ function mensagens(){
         <td>$mensagem</td>
         <td>$data_mensagem</td>
 
-        <td class='text-center'><a href='mensagem-excluir.php?id_mensagem=$id&nome_cliente_mensagem=$nome'><i class='far fa-trash-alt'></i> </a> </td>
+        <td class='text-center'><a class='link-cor-padrao' data-toggle='tooltip' title='Excluir Mensagem' href='mensagem-excluir.php?id_mensagem=$id&nome_cliente_mensagem=$nome'><i class='far fa-trash-alt'></i> </a> </td>
       </tr>";
     }
     print"</tbody> </table>";
@@ -546,8 +589,8 @@ function usuarios_cadastrados(){
         <td>$usuario</td>
         <td>$status_nome</td>
 
-        <td class='text-center'> <a href='cadastro-usuario-alterar.php?id_usuario=$id&nome_usuario=$nome&usuario=$usuario'><i class='far fa-edit'></i> </a> </td>
-        <td class='text-center'><a href='cadastro-usuario-excluir.php?id_usuario=$id&nome_usuario=$nome'><i class='far fa-trash-alt'></i> </a> </td>
+        <td class='text-center'> <a class='link-cor-padrao' data-toggle='tooltip' title='Editar' href='cadastro-usuario-alterar.php?id_usuario=$id&nome_usuario=$nome&usuario=$usuario'><i class='far fa-edit'></i> </a> </td>
+        <td class='text-center'><a class='link-cor-padrao' data-toggle='tooltip' title='Excluir' href='cadastro-usuario-excluir.php?id_usuario=$id&nome_usuario=$nome'><i class='far fa-trash-alt'></i> </a> </td>
       </tr>";
     }
     print"</tbody> </table>";
@@ -555,6 +598,63 @@ function usuarios_cadastrados(){
   }
 
 
+//-----------------------
+function qual_tipo($valor){
+  if($valor == 0 ){
+    return print "<option selected value='0'>Aluguel</option>";
+  }
+  elseif($valor == 1 ){
+    return print "<option selected value='1'>Venda</option>";
+  }
+}
+
+
+//-----------------------
+function qual_status_site($valor){
+  if($valor == 1 ){
+    return print "<option selected value='1'>Ativado</option>";
+  }
+  elseif($valor == 0 ){
+    return print "<option selected value='0'>Desativado</option>";
+  }
+}
+
+
+//-----------------------
+function qual_status_contrato($valor){
+  if($valor == 0 ){
+    return print "<option selected value='0'>Disponível</option>";
+  }
+  elseif($valor == 1 ){
+    return print "<option selected value='1'>Alugado</option>";
+  } 
+  elseif($valor == 2 ){
+    return print "<option selected value='2'>Vendido</option>";
+  }
+}
+
+
+
+//-----------------------
+function qual_area_servico($valor){
+  if($valor == 0 ){
+    return print "<option selected value='0'>Não</option>";
+  }
+  elseif($valor == 1 ){
+    return print "<option selected value='1'>Sim</option>";
+  }
+}
+
+
+//-----------------------
+function qual_destaque_site($valor){
+  if($valor == 0 ){
+    return print "<option selected value='0'>Não</option>";
+  }
+  elseif($valor == 1 ){
+    return print "<option selected value='1'>Sim</option>";
+  }
+}
 
 
 
