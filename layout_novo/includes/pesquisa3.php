@@ -1,6 +1,6 @@
 <div class="row justify-content-center">
   
-  <div class="col col-12 border-righ border-top border-bottom py-1 my-1">
+  <div class="col col-12 border-righ border-top border-bottom py-1 my-1 d-none d-md-block">
     <div class="col col-12 bg-titulo">
       <span class="text-secondary text-center">Falar com corretor</span>
     </div>
@@ -11,11 +11,12 @@
     </div>
   </div>
 
-  <div class="col col-12 border-righ border-top border-bottom py-1 my-3">
+  <div class="col col-12 col-sm-6 col-md-12  border-top border-bottom py-1 my-3">
     <div class="col col-12 bg-titulo">
       <span class="text-secondary text-center">Venda</span>
     </div>
     <div class="col col-12 px-0">
+        <a href="#" class="link-cor-imovel"><i class="fas fa-caret-right"></i> Totos (35)</a> <br>
         <a href="#" class="link-cor-imovel"><i class="fas fa-caret-right"></i> Apartamento (6)</a> <br>
         <a href="#" class="link-cor-imovel"><i class="fas fa-caret-right"></i> Casa (21)</a> <br>
         <a href="#" class="link-cor-imovel"><i class="fas fa-caret-right"></i> Chácara (3)</a> <br>
@@ -25,11 +26,12 @@
      </div>
   </div>
  
-  <div class="col col-12 border-righ border-top border-bottom py-1 my-3">
+  <div class="col col-12 col-sm-6 col-md-12 border-top border-bottom py-1 my-3">
     <div class="col col-12 bg-titulo">
       <span class="text-secondary text-center">Aluguel</span>
     </div>
     <div class="col col-12 px-0">
+        <a href="#" class="link-cor-imovel"><i class="fas fa-caret-right"></i> Totos (80)</a> <br>
         <a href="#" class="link-cor-imovel"><i class="fas fa-caret-right"></i> Apartamento (6)</a> <br>
         <a href="#" class="link-cor-imovel"><i class="fas fa-caret-right"></i> Casa (21)</a> <br>
         <a href="#" class="link-cor-imovel"><i class="fas fa-caret-right"></i> Chácara (3)</a> <br>
@@ -39,7 +41,7 @@
      </div>
   </div>
 
-  <div class="col col-12 border-righ border-top border-bottom py-1 my-3">
+  <div class="col col-12 border-top border-bottom py-1 my-3">
     <div class="col col-12 bg-titulo">
       <span class="text-secondary text-center ">Veja Também</span>
     </div>

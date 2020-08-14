@@ -1,3 +1,5 @@
+ <!-- Se colocar o menu fixo é necessário essa linha
+      <div style="margin-top:70px;"></div> -->
 <div class="container" style="margin-bottom:-15px;">
   <div class="row" style="padding: 0px;">
     <div class="col" style="padding-top:15px;">

@@ -28,21 +28,36 @@
       include("includes/menu.php");
       ?>
     </div>
-    <!-- <div style="margin-top:50px;"></div> -->
 
     <div class="container">
 
-    <?php
-      // include("pesquisa.php");
-      // include("carousel.php");
-    ?>
-    <br>
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.983923503267!2d-43.307713385137745!3d-15.80480168904476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x753d041544400ff%3A0x7f4825db0dfb30ce!2sAv.+Mal.+Deodoro+da+Fonseca%2C+314+-+Centro%2C+Jana%C3%BAba+-+MG%2C+39440-000!5e0!3m2!1spt-BR!2sbr!4v1497038027514" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <div class="row justify-content-center text-justify">   
+
+        <!-- Não apararece em dispositivos menores que MD -->
+        <div class="col col-12 col-md-3 text mt-1 pr-lg-4 pr-md-4 d-none d-md-block">
+          <?php
+            include("includes/pesquisa3.php");
+          ?>
         </div>
-    </div>
+        
+        <div class="col col-12 col-md-9">
+            <div class="col-md-12">
+              <br>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.983923503267!2d-43.307713385137745!3d-15.80480168904476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x753d041544400ff%3A0x7f4825db0dfb30ce!2sAv.+Mal.+Deodoro+da+Fonseca%2C+314+-+Centro%2C+Jana%C3%BAba+-+MG%2C+39440-000!5e0!3m2!1spt-BR!2sbr!4v1497038027514" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+            </div>
+        </div>
+
+        <!-- Aparecer apenas em tablet e celular // d-sm-none Esconde em telas acima de SM-->
+        <div class="col col-12 col-md-2 text mt-1 d-md-none" id="resposta">
+          <?php
+            include("includes/pesquisa3.php");
+          ?>
+        </div>
+        
+      </div>   <!-- row -->
     </div> <!-- container -->
+    
 <br>
 
     <?php include("includes/footer.php"); ?>

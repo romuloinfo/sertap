@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-  <div class="col col-12 border-top border-bottom">
+  <div class="col col-12 border-top border-bottom py-1">
     <div class="col col-12 bg-titulo text-left">
       <span class="text-secondary ">Busca rápida</span>
     </div>

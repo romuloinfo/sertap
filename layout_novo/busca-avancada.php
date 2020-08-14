@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<?php
+    include("adm/funcoes/funcoes-usuario.php");
+?>
   <head>
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
@@ -29,162 +32,58 @@
   </head>
   <body>
      <div class="bg-sertap">
-      <?php
-      include("includes/menu.php");
-      ?>
-    </div>
-    <!-- <div style="margin-top:70px;"></div> -->
-
-  <div class="container">
-
-    <?php
-      // include("pesquisa.php");
-      // include("carousel.php");
-    ?>
-    <br>
-   <form id="form_contato">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <h4 class="lead">Faça uma busca de imóveis personalizada</h4>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <!-- <label for="assunto">Assunto</label> -->
-              <select id="finalidade" name="finalidade" class="form-control">
-                <option selected value="">Finalidade...</option>
-                <option value="Venda">Venda</option>
-                <option value="Aluguel">Aluguel</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6">
-              <!-- <label for="assunto">Assunto</label> -->
-              <select id="categoria" name="categoria" class="form-control">
-                <option selected value="">Categoria...</option>
-                <option value="Apartamento">Apartamento</option>
-                <option value="Área">Área</option>
-                <option value="Casa">Casa</option>
-                <option value="Chácara">Chácara</option>
-                <option value="Fazenda">Fazenda</option>
-                <option value="Lote">Lote</option>
-                <option value="Ponto Comercial">Ponto Comercial</option>
-                <option value="Pousada">Pousada</option>
-                <option value="Salas">Salas</option>
-                <option value="Terreno">Terreno</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6">
-              <!-- <label for="assunto">Assunto</label> -->
-              <select id="cidade" name="cidade" class="form-control">
-                <option selected value="">Cidade...</option>
-                <option value="">??</option>
-                <option value="">??</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6">
-              <!-- <label for="assunto">Assunto</label> -->
-              <select id="quarto" name="quarto" class="form-control">
-                <option selected value="">Quartos/Dormitórios...</option>
-                <option value="1">1</option>
-                <option value="1_ou_mais">1 ou mais</option>
-                <option value="2">2</option>
-                <option value="2_ou_mais">2 ou mais</option>
-                <option value="3">3</option>
-                <option value="3_ou_mais">3 ou mais</option>
-                <option value="4">4</option>
-                <option value="4_ou_mais">4 ou mais</option>
-                <option value="5">5</option>
-                <option value="5_ou_mais">5 ou mais</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6">
-              <!-- <label for="assunto">Assunto</label> -->
-              <select id="suite" name="suite" class="form-control">
-                <option selected value="">Suíte...</option>
-                <option value="1">1</option>
-                <option value="1_ou_mais">1 ou mais</option>
-                <option value="2">2</option>
-                <option value="2_ou_mais">2 ou mais</option>
-                <option value="3">3</option>
-                <option value="3_ou_mais">3 ou mais</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6">
-              <!-- <label for="assunto">Assunto</label> -->
-              <select id="banheiro" name="banheiro" class="form-control">
-                <option selected value="">Banheiro...</option>
-                <option value="1">1</option>
-                <option value="1_ou_mais">1 ou mais</option>
-                <option value="2">2</option>
-                <option value="2_ou_mais">2 ou mais</option>
-                <option value="3">3</option>
-                <option value="3_ou_mais">3 ou mais</option>
-                <option value="4">4</option>
-                <option value="4_ou_mais">4 ou mais</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6">
-              <!-- <label for="assunto">Assunto</label> -->
-              <select id="garagem" name="garagem" class="form-control">
-                <option selected value="">Garagem...</option>
-                <option value="1">1</option>
-                <option value="1_ou_mais">1 ou mais</option>
-                <option value="2">2</option>
-                <option value="2_ou_mais">2 ou mais</option>
-                <option value="3">3</option>
-                <option value="3_ou_mais">3 ou mais</option>
-              </select>
-            </div>
-          
-          </div>
-          <div class="form-row">
-
-          <div class=" form-group col-md-6">
-              <!-- <input type="text" class="form-control" title="Preço Máximo" id="max" name="max" placeholder="R$ Máx"> -->
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend2">R$</span>
-                </div>
-                <input type="number" class="form-control" id="preco_min" name="preco_min" placeholder="Preço Mínimo" aria-describedby="inputGroupPrepend2">
-              </div>
-            </div>
-
-            <div class="form-group col-md-6">
-              <!-- <input type="text" class="form-control" title="Preço Máximo" id="max" name="max" placeholder="R$ Máx"> -->
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend2">R$</span>
-                </div>
-                <input type="number" class="form-control" id="preco_max" name="preco_max" placeholder="Preço Máximo" aria-describedby="inputGroupPrepend2">
-              </div>
-            </div>
-          
-            <div class="form-group col-md-6">
-              <!-- <label for="inputEmail4">Email</label> -->
-              <input type="number" class="form-control" id="area_minima" name="area_minima" placeholder="Área (m²): Mínimo">
-            </div>
-
-            <div class="form-group col-md-6">
-              <!-- <label for="inputPassword4">Senha</label> -->
-              <input type="number" class="form-control" id="area_maxima" name="are_maxima" placeholder="Área (m²): Máximo">
-            </div>
-          </div>
-
-        <button type="button" class="btn btn-success btn-block" onclick="insereContato()"> <i class="fas fa-search"></i> Pesquisar</button>
-      <br>
-     </div>
-    </div>
-  </form>
-      <div id="resposta">
-
+        <?php
+          include("includes/menu.php");
+        ?>
       </div>
+    <div class="container">
+      <div class="row justify-content-center text-justify">   
 
-</div> <!-- container -->
-<br>
+          <!-- Não apararece em dispositivos menores que MD -->
+          <div class="col col-12 col-md-3 mt-1 pr-lg-4 pr-md-4 d-none d-md-block">
+            <?php
+              include("includes/pesquisa3.php");
+            ?>
+          </div>
+          
+          <div class="col col-12 col-md-9">
+            <div class="row justify-content-center">
+              <div class="col-lg-10">
+                  <?php
+                    include("includes/pesquisa-avancada.php");
+                  ?>
+              </div>
+              <div class="col col-12 col-md-11 mt-1 pr-lg-4 border">
+                  Resultado da pesquisa aqui!
+              </div>
+              
+            </div>
+          </div>
+
+        <!-- Aparecer apenas em tablet e celular // d-sm-none Esconde em telas acima de SM-->
+        <div class="col col-12 text mt-1 d-md-none">
+          <?php
+            include("includes/pesquisa3.php");
+          ?>
+        </div>
+        
+      </div>   <!-- row -->
+    </div> <!-- container -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+      
+
 
     <?php include("includes/footer.php"); ?>
 

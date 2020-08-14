@@ -33,61 +33,78 @@
       include("includes/menu.php");
       ?>
     </div>
-    <!-- <div style="margin-top:70px;"></div> -->
 
     <div class="container">
 
-    <?php
-      // include("pesquisa.php");
-      // include("carousel.php");
-    ?>
-    <br>
-  <div class="row justify-content-center">
-    <div class="col-lg-8">
-    <form id="form_contato">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <!-- <label for="assunto">Assunto</label> -->
-          <select id="assunto" name="assunto" class="form-control">
-            <option selected value="Não informado">Assunto...</option>
-            <option value="Agendar Visita a um imóvel">Agendar Visita a um imóvel</option>
-            <option value="Interessado em Comprar um imóvel">Interessado em Comprar um imóvel</option>
-            <option value="Interessado em Vender um imóvel">Interessado em Vender um imóvel</option>
-            <option value="Interessado em Alugar um imóvel">Interessado em Alugar um imóvel</option>
-            <option value="Interessado em Alugar ou Vender o meu imóvel">Interessado em Alugar ou Vender o meu imóvel</option>
-            <option value="Outro">Outro</option>
-          </select>
-         </div>
-        <div class="form-group col-md-6">
-          <!-- <label for="inputPassword4">Senha</label> -->
-          <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+      <div class="row justify-content-center text-justify">   
+
+        <!-- Não apararece em dispositivos menores que MD -->
+        <div class="col col-12 col-md-3 text mt-1 pr-lg-4 pr-md-4 d-none d-md-block">
+          <?php
+            include("includes/pesquisa3.php");
+          ?>
         </div>
-      </div>
+        
+        <div class="col col-12 col-md-9">
+          <br>
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+            <form id="form_contato">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <!-- <label for="assunto">Assunto</label> -->
+                  <select id="assunto" name="assunto" class="form-control">
+                    <option selected value="Não informado">Assunto...</option>
+                    <option value="Agendar Visita a um imóvel">Agendar Visita a um imóvel</option>
+                    <option value="Interessado em Comprar um imóvel">Interessado em Comprar um imóvel</option>
+                    <option value="Interessado em Vender um imóvel">Interessado em Vender um imóvel</option>
+                    <option value="Interessado em Alugar um imóvel">Interessado em Alugar um imóvel</option>
+                    <option value="Interessado em Alugar ou Vender o meu imóvel">Interessado em Alugar ou Vender o meu imóvel</option>
+                    <option value="Outro">Outro</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <!-- <label for="inputPassword4">Senha</label> -->
+                  <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+                </div>
+              </div>
 
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <!-- <label for="inputEmail4">Email</label> -->
-          <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <!-- <label for="inputEmail4">Email</label> -->
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="form-group col-md-6">
+                  <!-- <label for="inputPassword4">Senha</label> -->
+                  <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone (DDD) 9 9999-9999">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <!-- <label for="exampleFormControlTextarea1">Exemplo de textarea</label> -->
+                <textarea class="form-control" id="mensagem" name="mensagem" rows="4" placeholder="Digite aqui a sua mensagem..."></textarea>
+              </div>
+              <button type="button" class="btn btn-success btn-block" onclick="insereContato()">Enviar</button>
+            </form>
+            <br>
+            <div id="resposta">
+
+            </div>
+            Se preferir podemos conversar pelo whatsapp, é só clicar 
+            <a href="https://web.whatsapp.com/send?l=pt_br&phone=5538988310162" target="_blank" class="link-geral">aqui! <img src="imagens/whats.png" width="30px"></a>
+            
+          </div>
         </div>
-        <div class="form-group col-md-6">
-          <!-- <label for="inputPassword4">Senha</label> -->
-          <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone (DDD) 9 9999-9999">
         </div>
-      </div>
 
-      <div class="form-group">
-        <!-- <label for="exampleFormControlTextarea1">Exemplo de textarea</label> -->
-        <textarea class="form-control" id="mensagem" name="mensagem" rows="4" placeholder="Digite aqui a sua mensagem..."></textarea>
-      </div>
-     <button type="button" class="btn btn-success btn-block" onclick="insereContato()">Enviar</button>
-    </form>
-    <br>
-    <div id="resposta">
-
-    </div>
-  </div>
-</div>
-
+        <!-- Aparecer apenas em tablet e celular // d-sm-none Esconde em telas acima de SM-->
+        <div class="col col-12 col-md-2 text mt-1 d-md-none" id="resposta">
+          <?php
+            include("includes/pesquisa3.php");
+          ?>
+        </div>
+        
+      </div>   <!-- row -->
     </div> <!-- container -->
 <br>
 

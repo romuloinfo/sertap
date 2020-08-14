@@ -31,132 +31,50 @@
       <?php
       include("includes/menu.php");
       ?>
-    </div>
+    </div>   
 
-    <!-- Se colocar o menu fixo é necessário essa linha
-      <div style="margin-top:70px;"></div> -->
+    <div class="container mt-1">
 
-    <div class="container">
-
-    <div class="row justify-content-center">    
-        <div class="col col-12 col-md-2 text-center mt-1 d-none d-sm-block">
-          <?php
-            include("includes/pesquisa2.php");
-          ?>
-        </div>
-        <div class="col col-12 col-md-10 text-center mt-1">
-          <?php
-             include("includes/carousel2.php");
-          ?>
-        </div>
-    </div>      <!-- row -->  
-
-    <!-- visível apenas em celular -->
-    <div class="d-block d-sm-none mt-2">
-      <p class="text-center" style="margin:1px">
-          <span class="lead" style="color:#0a2516"><i class="fas fa-house-damage"></i> Encontre seu Imóvel <i class="fas fa-house-damage"></i></span>
-      </p>
-      <?php
-        include("includes/pesquisa.php");
-      ?>
-    </div>
+      <div class="row justify-content-center">    
+          <div class="col col-12 col-md-3 text-center mt-1">
+            <?php
+              include("includes/pesquisa2.php");
+            ?>
+          </div>
+          <div class="col col-12 col-md-9 text-center mt-1">
+            <?php
+              include("includes/carousel2.php");
+            ?>
+          </div>
+      </div>      <!-- row -->  
 
     <div class="row justify-content-center">   
         <div class="col-12 mt-3">
-          <h2 class="text-center">
+          <h2 class="text-center font-weight-light">
             Novos Imóveis
           </h2>
         </div> 
 
-        <div class="col col-12 col-md-2 text mt-1 d-none d-sm-block">
+        <!-- Não apararece em dispositivos menores que MD -->
+        <div class="col col-12 col-md-3 text mt-1 pr-lg-4 pr-md-4 d-none d-md-block">
           <?php
             include("includes/pesquisa3.php");
           ?>
         </div>
         
-        <div class="col col-12 col-md-10 text-center">
-          <div class="row justify-content-center">
-          
-            <div class="col-md-4 col-sm-6 col-10 shadow-lg mb-1 p-1 sobre">
-                <a href="#" class="">
-                  <img class="img-fluid p-1" src="imagens_publicas/7.jpg">
-                </a>
-                <p class="text-center">
-                  <a href="#" class="link-cor-imovel"><span class="lead"><b><i class="fas fa-home"></i> Casa</b></span></a><br/>
-                  <span class="text-secondary font-weight-light">Cód. Referência: S201</span><br/>
-                  <span class="text-secondary ">Aluguel Disponível</span><br/>
-                  <span class="text-secondary font-weight-light">Bairro / Janaúba - Mg</span><br/>
-                  <span style="font-size:15pt; color:#0B3B17"><b><i class="fas fa-comment-dollar"></i> 120.000,00</b></span><br>
-                </p>
-                <p class="text-right" style="font-size:10pt; margin:3px;">
-            </div>
+        <div class="col col-12 col-md-9 text-center">
+          <?php
+            include("includes/pesquisa-imoveis-iniciais.php");
+          ?>
+        </div>
 
-            <div class="col-md-4 col-sm-6 col-10 shadow-lg mb-1 p-1 sobre">
-                <a href="#" class=""><img class="img-fluid p-1" src="imagens_publicas/11.jpg"></a>
-                <p class="text-center">
-                  <a href="#" class="link-cor-imovel"><span class="lead"><b><i class="fas fa-home"></i> Casa</b></span></a><br/>
-                  <span class="text-secondary font-weight-light">Cód. Referência: S201</span><br/>
-                  <span class="text-secondary ">Aluguel Disponível</span><br/>
-                  <span class="text-secondary font-weight-light">Bairro / Janaúba - Mg</span><br/>
-                  <span style="font-size:15pt; color:#0B3B17"><b><i class="fas fa-comment-dollar"></i> 120.000,00</b></span><br>
-                </p>
-                <p class="text-right" style="font-size:10pt; margin:3px;">
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-10 shadow-lg mb-1 p-1 sobre">
-                <a href="#" class=""><img class="img-fluid p-1" src="imagens_publicas/3.png"></a>
-                <p class="text-center">
-                  <a href="#" class="link-cor-imovel"><span class="lead"><b><i class="fas fa-home"></i> Casa</b></span></a><br/>
-                  <span class="text-secondary font-weight-light">Cód. Referência: S201</span><br/>
-                  <span class="text-secondary ">Aluguel Disponível</span><br/>
-                  <span class="text-secondary font-weight-light">Bairro / Janaúba - Mg</span><br/>
-                  <span style="font-size:15pt; color:#0B3B17"><b><i class="fas fa-comment-dollar"></i> 120.000,00</b></span><br>
-                </p>
-                <p class="text-right" style="font-size:10pt; margin:3px;">
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-10 shadow-lg mb-1 p-1">
-                <a href="#" class=""><img class="img-fluid p-1" src="imagens_publicas/4.png"></a>
-                <p class="text-center">
-                  <a href="#" class="link-cor-imovel"><span class="lead"><b><i class="fas fa-home"></i> Casa</b></span></a><br/>
-                  <span class="text-secondary font-weight-light">Cód. Referência: S201</span><br/>
-                  <span class="text-secondary ">Aluguel Disponível</span><br/>
-                  <span class="text-secondary font-weight-light">Bairro / Janaúba - Mg</span><br/>
-                  <span style="font-size:15pt; color:#0B3B17"><b><i class="fas fa-comment-dollar"></i> 120.000,00</b></span><br>
-                </p>
-                <p class="text-right" style="font-size:10pt; margin:3px;">
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-10 shadow-lg mb-1 p-1">
-                <a href="#" class=""><img class="img-fluid p-1" src="imagens_publicas/1.jpg"></a>
-                <p class="text-center">
-                  <a href="#" class="link-cor-imovel"><span class="lead"><b><i class="fas fa-home"></i> Casa</b></span></a><br/>
-                  <span class="text-secondary font-weight-light">Cód. Referência: S201</span><br/>
-                  <span class="text-secondary ">Aluguel Disponível</span><br/>
-                  <span class="text-secondary font-weight-light">Bairro / Janaúba - Mg</span><br/>
-                  <span style="font-size:15pt; color:#0B3B17"><b><i class="fas fa-comment-dollar"></i> 120.000,00</b></span><br>
-                </p>
-                <p class="text-right" style="font-size:10pt; margin:3px;">
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-10 shadow-lg mb-1 p-1">
-                <a href="#" class=""><img class="img-fluid p-1" src="imagens_publicas/2.png"></a>
-                <p class="text-center">
-                  <a href="#" class="link-cor-imovel"><span class="lead"><b><i class="fas fa-home"></i> Casa</b></span></a><br/>
-                  <span class="text-secondary font-weight-light">Cód. Referência: S201</span><br/>
-                  <span class="text-secondary ">Aluguel Disponível</span><br/>
-                  <span class="text-secondary font-weight-light">Bairro / Janaúba - Mg</span><br/>
-                  <span style="font-size:15pt; color:#0B3B17"><b><i class="fas fa-comment-dollar"></i> 120.000,00</b></span><br>
-                </p>
-                <p class="text-right" style="font-size:10pt; margin:3px;">
-            </div>
-
-
-
-
-
-          </div>          <!-- row -->
-        </div>  <!-- col -->
+        <!-- Aparecer apenas em tablet e celular // d-sm-none Esconde em telas acima de SM-->
+        <div class="col col-12 col-md-2 text mt-1 d-md-none" id="resposta">
+          <?php
+            include("includes/pesquisa3.php");
+          ?>
+        </div>
+    
     </div>      <!-- row -->  
     
 
